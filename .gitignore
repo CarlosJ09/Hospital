@@ -1,0 +1,44 @@
+# Archivos y carpetas específicos de Visual Studio
+.vs/
+*.suo
+*.user
+*.sln.docstates
+
+# Archivos generados por Visual Studio
+bin/
+obj/
+
+# Archivos de respaldo
+*~
+
+# Extensiones de archivo que se pueden excluir
+*.bak
+*.cache
+*.log
+*.swp
+*.tmp
+
+# Carpetas de paquetes y dependencias
+packages/
+node_modules/
+
+# Archivos de compilación y construcción de proyectos
+*.dll
+*.exe
+*.pdb
+*.class
+*.jar
+*.war
+*.ear
+*.obj
+*.lib
+*.so
+*.apk
+*.a
+*.o
+
+# Archivos de configuración de IDE específicos
+.idea/
+.vscode/
+
+# Otros archivos y carpetas personalizados que desees excluir
