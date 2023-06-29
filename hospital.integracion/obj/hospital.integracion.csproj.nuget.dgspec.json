@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\carlo\\source\\repos\\Hospital\\hospital.integracion\\hospital.integracion.csproj": {}
+    "C:\\Users\\LeonelLora\\Desktop\\Tareas Adelantadas\\Hospital\\Hospital\\hospital.integracion\\hospital.integracion.csproj": {}
   },
   "projects": {
-    "C:\\Users\\carlo\\source\\repos\\Hospital\\hospital.integracion\\hospital.integracion.csproj": {
+    "C:\\Users\\LeonelLora\\Desktop\\Tareas Adelantadas\\Hospital\\Hospital\\hospital.integracion\\hospital.integracion.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\carlo\\source\\repos\\Hospital\\hospital.integracion\\hospital.integracion.csproj",
+        "projectUniqueName": "C:\\Users\\LeonelLora\\Desktop\\Tareas Adelantadas\\Hospital\\Hospital\\hospital.integracion\\hospital.integracion.csproj",
         "projectName": "hospital.integracion",
-        "projectPath": "C:\\Users\\carlo\\source\\repos\\Hospital\\hospital.integracion\\hospital.integracion.csproj",
-        "packagesPath": "C:\\Users\\carlo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\carlo\\source\\repos\\Hospital\\hospital.integracion\\obj\\",
+        "projectPath": "C:\\Users\\LeonelLora\\Desktop\\Tareas Adelantadas\\Hospital\\Hospital\\hospital.integracion\\hospital.integracion.csproj",
+        "packagesPath": "C:\\Users\\LeonelLora\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\LeonelLora\\Desktop\\Tareas Adelantadas\\Hospital\\Hospital\\hospital.integracion\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\carlo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\LeonelLora\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,7 +26,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -44,16 +43,6 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "dependencies": {
-            "Microsoft.AspNetCore.OpenApi": {
-              "target": "Package",
-              "version": "[7.0.5, )"
-            },
-            "Swashbuckle.AspNetCore": {
-              "target": "Package",
-              "version": "[6.4.0, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -65,15 +54,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }
