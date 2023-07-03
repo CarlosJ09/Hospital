@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\LeonelLora\\Desktop\\Tareas Adelantadas\\Hospital\\Hospital\\hospital.integracion\\hospital.integracion.csproj",
+      "projectUniqueName": "C:\\Users\\LeonelLora\\Desktop\\Tareas Adelantadas\\HospitalPrueba\\Hospital\\hospital.integracion\\hospital.integracion.csproj",
       "projectName": "hospital.integracion",
-      "projectPath": "C:\\Users\\LeonelLora\\Desktop\\Tareas Adelantadas\\Hospital\\Hospital\\hospital.integracion\\hospital.integracion.csproj",
+      "projectPath": "C:\\Users\\LeonelLora\\Desktop\\Tareas Adelantadas\\HospitalPrueba\\Hospital\\hospital.integracion\\hospital.integracion.csproj",
       "packagesPath": "C:\\Users\\LeonelLora\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\LeonelLora\\Desktop\\Tareas Adelantadas\\Hospital\\Hospital\\hospital.integracion\\obj\\",
+      "outputPath": "C:\\Users\\LeonelLora\\Desktop\\Tareas Adelantadas\\HospitalPrueba\\Hospital\\hospital.integracion\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
