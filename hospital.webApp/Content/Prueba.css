@@ -1,18 +1,18 @@
 ﻿.image-link {
     display: inline-block;
-    width: 300px; /* Ajusta el ancho de acuerdo a tus necesidades */
-    height: 100px; /* Ajusta la altura de acuerdo a tus necesidades */
+    width: 310px; /* Ajusta el ancho de acuerdo a tus necesidades */
+    height: 110px; /* Ajusta la altura de acuerdo a tus necesidades */
     padding: 0px;
-    margin:0px;
-    margin-right:2%;
-
-    background-image: url('../resources/hospital inteciano.2 logo, nombre, slogan.png'); /* Ruta de la imagen */
+    margin: 0px;
+    margin-right: 2%;
+    background-image: url('../resources/hospitec logo, nombre, slogan.png'); /* Ruta de la imagen */
     background-size: cover;
     /* Otros estilos CSS que desees aplicar */
 }
 
 .carousel-inner {
-    height: 500px
+    height: 500px;
+    margin-bottom: 50px;
 }
 
 body{
@@ -26,6 +26,7 @@ body{
 
 #navegation-bar {
     background-color: #e3f2fd;
+    margin-bottom:0px;
 }
 
 .nav-font-color{
@@ -33,3 +34,32 @@ body{
 
 }
 
+.top-together {
+    margin-top: 0px;
+    padding-top: 0px
+}
+
+.img-main {
+    height: auto;
+    width: auto;
+    max-height: 540px;
+    max-width: 360px;
+}
+
+.conteiner-img-main{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+}
+
+.item-main{
+    margin-right:auto;
+}
+
+.img-footer {
+    height: auto;
+    width: auto;
+    max-height: 140px;
+    max-width: 160px;
+}

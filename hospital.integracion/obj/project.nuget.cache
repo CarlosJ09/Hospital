@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "IcA1/ldUZgWY6hjlbv12z2Np/zRSA0Bp0SuCy1g9NK8xcJhim6BiK1GE3T07xY92ZhNP0c4YSYKNh9Oz25rCaQ==",
+  "dgSpecHash": "FVGcNH5pTnd2Goh3MnT52SoRql+BFF/2qvAiDd5BzgRnN8D4oKr8nBLVAB1Uw1iTTh9hlMjbYJlTbVNylkAIIQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\donat\\Source\\Repos\\Hospital\\hospital.integracion\\hospital.integracion.csproj",
+  "projectFilePath": "C:\\Users\\donat\\source\\repos\\Hospital\\hospital.integracion\\hospital.integracion.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\donat\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.5\\microsoft.aspnetcore.openapi.7.0.5.nupkg.sha512",
     "C:\\Users\\donat\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",

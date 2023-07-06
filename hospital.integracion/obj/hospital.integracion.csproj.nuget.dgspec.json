@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\donat\\Source\\Repos\\Hospital\\hospital.integracion\\hospital.integracion.csproj": {}
+    "C:\\Users\\donat\\source\\repos\\Hospital\\hospital.integracion\\hospital.integracion.csproj": {}
   },
   "projects": {
-    "C:\\Users\\donat\\Source\\Repos\\Hospital\\hospital.integracion\\hospital.integracion.csproj": {
+    "C:\\Users\\donat\\source\\repos\\Hospital\\hospital.integracion\\hospital.integracion.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\donat\\Source\\Repos\\Hospital\\hospital.integracion\\hospital.integracion.csproj",
+        "projectUniqueName": "C:\\Users\\donat\\source\\repos\\Hospital\\hospital.integracion\\hospital.integracion.csproj",
         "projectName": "hospital.integracion",
-        "projectPath": "C:\\Users\\donat\\Source\\Repos\\Hospital\\hospital.integracion\\hospital.integracion.csproj",
+        "projectPath": "C:\\Users\\donat\\source\\repos\\Hospital\\hospital.integracion\\hospital.integracion.csproj",
         "packagesPath": "C:\\Users\\donat\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\donat\\Source\\Repos\\Hospital\\hospital.integracion\\obj\\",
+        "outputPath": "C:\\Users\\donat\\source\\repos\\Hospital\\hospital.integracion\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -11,8 +11,8 @@
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
-<body class="fw-light">
-    <nav id="navegation-bar" class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark">
+<body>
+    <nav id="navegation-bar" class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark fw-light">
         <div class="container">
 
             @Html.ActionLink(" ", "Index", "Home", new { area = "" }, new { @class = "image-link" })
@@ -22,19 +22,41 @@
             </button>
             <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
                 <ul class="navbar-nav flex-grow-1">
-                    <li>@Html.ActionLink("Inicio", "Index", "Home", new { area = "" }, new { @class = "nav-link nav-font-color fs-5" })</li>
-                    <li>@Html.ActionLink("Sobre nosotros", "About", "Home", new { area = "" }, new { @class = "nav-link nav-font-color fs-5" })</li>
-                    <li>@Html.ActionLink("Contactarnos", "Contact", "Home", new { area = "" }, new { @class = "nav-link nav-font-color fs-5" })</li>
-                    <li>@Html.ActionLink("Solicitar cita", "Contact", "Home", new { area = "" }, new { @class = "nav-link nav-font-color fs-5" })</li>
+                    <li>@Html.ActionLink("Sobre nosotros", "About", "Home", new { area = "" }, new { @class = "nav-link nav-font-color fs-4" })</li>
+                    <li>@Html.ActionLink("Contactarnos", "Contact", "Home", new { area = "" }, new { @class = "nav-link nav-font-color fs-4" })</li>
+                    <li>@Html.ActionLink("Solicitar cita", "Contact", "Home", new { area = "" }, new { @class = "nav-link nav-font-color fs-4" })</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
     </nav>
-    <div class="container body-content">
+    <div class="container body-content top-together">
         @RenderBody()
         <hr />
         <footer class="text-center">
+
+
+            <div class="row">
+                <section class="col-md-4" aria-labelledby="gettingStartedTitle">
+                    <h2 id="gettingStartedTitle">Getting started</h2>
+                    @Html.ActionLink("Regístrate para recibir gratuitamente boletines informativos electrónicos", "Index", "Home", new { area = "" }, new { @class = "btn btn-outline-dark" })
+                 
+                </section>
+                <section class="col-md-4" aria-labelledby="librariesTitle">
+                    <h2 id="librariesTitle">Get more libraries</h2>
+                    @Html.ActionLink("Encuentra un médico", "Index", "Home", new { area = "" }, new { @class = "btn btn-outline-dark" })
+
+                </section>
+                <section class="col-md-4" aria-labelledby="hostingTitle">
+                    <h2 id="hostingTitle">Web Hosting</h2>
+                    @Html.ActionLink("Conoce sobre el hospital #1 de RD", "Index", "Home", new { area = "" }, new { @class = "btn btn-outline-dark" })
+
+                </section>
+            </div>
+
+
+
+            <img src="~/Resources/HOSPITAL INTECIANO.2 LOGO.png" class="img-footer" />
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
     </div>

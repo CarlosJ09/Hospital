@@ -205,7 +205,9 @@
     <Content Include="Resources\doctor-atendiendo-paciente.jpg" />
     <Content Include="Resources\HOSPITAL INTECIANO.2 LOGO, NOMBRE, SLOGAN.png" />
     <Content Include="Resources\HOSPITAL INTECIANO.2 LOGO.png" />
+    <Content Include="Resources\HOSPITEC LOGO, NOMBRE, SLOGAN.png" />
     <Content Include="Resources\laboratorio-clinico-biomedico.jpg" />
+    <Content Include="Resources\personas saludables corriendo.jpg" />
     <Content Include="Resources\recepcionista de hospital.jpg" />
     <Content Include="Resources\usuario.png" />
     <Content Include="Scripts\bootstrap.bundle.js" />
