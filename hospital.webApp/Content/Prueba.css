@@ -1,9 +1,35 @@
-﻿body {
-    
+﻿.image-link {
+    display: inline-block;
+    width: 300px; /* Ajusta el ancho de acuerdo a tus necesidades */
+    height: 100px; /* Ajusta la altura de acuerdo a tus necesidades */
+    padding: 0px;
+    margin:0px;
+    margin-right:2%;
+
+    background-image: url('../resources/hospital inteciano.2 logo, nombre, slogan.png'); /* Ruta de la imagen */
+    background-size: cover;
+    /* Otros estilos CSS que desees aplicar */
 }
-
-
 
 .carousel-inner {
     height: 500px
 }
+
+body{
+    background-color:white
+}
+
+#buttom-first-caroussel-slide {
+    color:darkgoldenrod;
+    font-size:400%;
+}
+
+#navegation-bar {
+    background-color: #e3f2fd;
+}
+
+.nav-font-color{
+    color: black;
+
+}
+

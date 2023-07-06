@@ -5,25 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
+    
+    @Styles.Render("~/Content/Prueba.css")
+    
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
-<body>
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
+<body class="fw-light">
+    <nav id="navegation-bar" class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark">
         <div class="container">
-            @Html.ActionLink("HOSPITAL", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+
+            @Html.ActionLink(" ", "Index", "Home", new { area = "" }, new { @class = "image-link" })
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
                 <ul class="navbar-nav flex-grow-1">
-                    <li>@Html.ActionLink("Inicio", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Sobre nosotros", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Contactarnos", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Solicitar cita", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Inicio", "Index", "Home", new { area = "" }, new { @class = "nav-link nav-font-color fs-5" })</li>
+                    <li>@Html.ActionLink("Sobre nosotros", "About", "Home", new { area = "" }, new { @class = "nav-link nav-font-color fs-5" })</li>
+                    <li>@Html.ActionLink("Contactarnos", "Contact", "Home", new { area = "" }, new { @class = "nav-link nav-font-color fs-5" })</li>
+                    <li>@Html.ActionLink("Solicitar cita", "Contact", "Home", new { area = "" }, new { @class = "nav-link nav-font-color fs-5" })</li>
                 </ul>
-                 @Html.Partial("_LoginPartial")
+                @Html.Partial("_LoginPartial")
             </div>
         </div>
     </nav>
