@@ -1,0 +1,311 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CajaBDModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CLIENTE">
+          <Key>
+            <PropertyRef Name="Id_Cliente" />
+          </Key>
+          <Property Name="Id_Cliente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre_Cliente" Type="varchar" MaxLength="100" />
+          <Property Name="Cedula_Cliente" Type="varchar" MaxLength="11" />
+          <Property Name="Id_Seguro" Type="int" />
+          <Property Name="Poliza" Type="varchar" MaxLength="30" />
+          <Property Name="Telefono" Type="varchar" MaxLength="11" />
+        </EntityType>
+        <EntityType Name="EMPLEADO">
+          <Key>
+            <PropertyRef Name="Id_Empleado" />
+          </Key>
+          <Property Name="Id_Empleado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre_Empleado" Type="varchar" MaxLength="50" />
+          <Property Name="Cedula_Empleado" Type="varchar" MaxLength="11" />
+          <Property Name="User" Type="varchar" MaxLength="50" />
+          <Property Name="Password" Type="varchar" MaxLength="40" />
+        </EntityType>
+        <EntityType Name="FACTURA">
+          <Key>
+            <PropertyRef Name="Id_Factura" />
+            <PropertyRef Name="Id_Cliente" />
+            <PropertyRef Name="Id_Servicio" />
+          </Key>
+          <Property Name="Id_Factura" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id_Cliente" Type="int" Nullable="false" />
+          <Property Name="Id_Servicio" Type="int" Nullable="false" />
+          <Property Name="Codigo_Factura" Type="varchar" MaxLength="10" />
+          <Property Name="Monto" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Des_Seguro" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Pagado" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Total_Facturado" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Total_Seguro" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Total_Balance" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Fecha" Type="date" />
+          <Property Name="Id_Empleado" Type="int" />
+          <Property Name="Importe" Type="decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="REPORTE">
+          <Key>
+            <PropertyRef Name="Id_Factura" />
+            <PropertyRef Name="Id_Cliente" />
+          </Key>
+          <Property Name="Id_Factura" Type="int" Nullable="false" />
+          <Property Name="Id_Cliente" Type="int" Nullable="false" />
+          <Property Name="Id_Empleado" Type="int" />
+          <Property Name="Id_Seguro" Type="int" />
+          <Property Name="Importe" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Subtotal" Type="decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="SEGURO">
+          <Key>
+            <PropertyRef Name="Id_Seguro" />
+          </Key>
+          <Property Name="Id_Seguro" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre_Seguro" Type="varchar" MaxLength="60" />
+          <Property Name="Des_Porcentaje" Type="decimal" Precision="3" Scale="2" />
+        </EntityType>
+        <EntityType Name="SERVICIOS">
+          <Key>
+            <PropertyRef Name="Id_Servicio" />
+          </Key>
+          <Property Name="Id_Servicio" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre_Servicio" Type="varchar" MaxLength="150" />
+          <Property Name="Precio" Type="decimal" Precision="9" Scale="2" />
+        </EntityType>
+        <Function Name="ppIngresarFactura" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id_Cliente" Type="int" Mode="In" />
+          <Parameter Name="Id_Servicio" Type="int" Mode="In" />
+          <Parameter Name="Codigo_Factura" Type="varchar" Mode="In" />
+          <Parameter Name="Monto" Type="decimal" Mode="In" />
+          <Parameter Name="Des_Seguro" Type="decimal" Mode="In" />
+          <Parameter Name="Pagado" Type="decimal" Mode="In" />
+          <Parameter Name="Total_Facturado" Type="decimal" Mode="In" />
+          <Parameter Name="Total_Seguro" Type="decimal" Mode="In" />
+          <Parameter Name="Total_Balance" Type="decimal" Mode="In" />
+          <Parameter Name="Fecha" Type="date" Mode="In" />
+          <Parameter Name="Id_Empleado" Type="int" Mode="In" />
+          <Parameter Name="Importe" Type="decimal" Mode="In" />
+        </Function>
+        <Function Name="ppInsertarCliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Nombre_Cliente" Type="varchar" Mode="In" />
+          <Parameter Name="Cedula_Cliente" Type="varchar" Mode="In" />
+          <Parameter Name="Id_Seguro" Type="int" Mode="In" />
+          <Parameter Name="Poliza" Type="varchar" Mode="In" />
+          <Parameter Name="Telefono" Type="varchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="CajaBDModelStoreContainer">
+          <EntitySet Name="CLIENTE" EntityType="Self.CLIENTE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EMPLEADO" EntityType="Self.EMPLEADO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FACTURA" EntityType="Self.FACTURA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="REPORTE" EntityType="Self.REPORTE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SEGURO" EntityType="Self.SEGURO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SERVICIOS" EntityType="Self.SERVICIOS" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CajaBDModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CLIENTE">
+          <Key>
+            <PropertyRef Name="Id_Cliente" />
+          </Key>
+          <Property Name="Id_Cliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre_Cliente" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Cedula_Cliente" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="Id_Seguro" Type="Int32" />
+          <Property Name="Poliza" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Telefono" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="EMPLEADO">
+          <Key>
+            <PropertyRef Name="Id_Empleado" />
+          </Key>
+          <Property Name="Id_Empleado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre_Empleado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Cedula_Empleado" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="User" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="FACTURA">
+          <Key>
+            <PropertyRef Name="Id_Factura" />
+            <PropertyRef Name="Id_Cliente" />
+            <PropertyRef Name="Id_Servicio" />
+          </Key>
+          <Property Name="Id_Factura" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id_Cliente" Type="Int32" Nullable="false" />
+          <Property Name="Id_Servicio" Type="Int32" Nullable="false" />
+          <Property Name="Codigo_Factura" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Monto" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Des_Seguro" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Pagado" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Total_Facturado" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Total_Seguro" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Total_Balance" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Fecha" Type="DateTime" Precision="0" />
+          <Property Name="Id_Empleado" Type="Int32" />
+          <Property Name="Importe" Type="Decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="REPORTE">
+          <Key>
+            <PropertyRef Name="Id_Factura" />
+            <PropertyRef Name="Id_Cliente" />
+          </Key>
+          <Property Name="Id_Factura" Type="Int32" Nullable="false" />
+          <Property Name="Id_Cliente" Type="Int32" Nullable="false" />
+          <Property Name="Id_Empleado" Type="Int32" />
+          <Property Name="Id_Seguro" Type="Int32" />
+          <Property Name="Importe" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Subtotal" Type="Decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="SEGURO">
+          <Key>
+            <PropertyRef Name="Id_Seguro" />
+          </Key>
+          <Property Name="Id_Seguro" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre_Seguro" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="Des_Porcentaje" Type="Decimal" Precision="3" Scale="2" />
+        </EntityType>
+        <EntityType Name="SERVICIO">
+          <Key>
+            <PropertyRef Name="Id_Servicio" />
+          </Key>
+          <Property Name="Id_Servicio" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre_Servicio" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Precio" Type="Decimal" Precision="9" Scale="2" />
+        </EntityType>
+        <EntityContainer Name="CajaBDEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CLIENTEs" EntityType="Self.CLIENTE" />
+          <EntitySet Name="EMPLEADOes" EntityType="Self.EMPLEADO" />
+          <EntitySet Name="FACTURAs" EntityType="Self.FACTURA" />
+          <EntitySet Name="REPORTEs" EntityType="Self.REPORTE" />
+          <EntitySet Name="SEGUROes" EntityType="Self.SEGURO" />
+          <EntitySet Name="SERVICIOS" EntityType="Self.SERVICIO" />
+          <FunctionImport Name="ppIngresarFactura">
+            <Parameter Name="Id_Cliente" Mode="In" Type="Int32" />
+            <Parameter Name="Id_Servicio" Mode="In" Type="Int32" />
+            <Parameter Name="Codigo_Factura" Mode="In" Type="String" />
+            <Parameter Name="Monto" Mode="In" Type="Decimal" />
+            <Parameter Name="Des_Seguro" Mode="In" Type="Decimal" />
+            <Parameter Name="Pagado" Mode="In" Type="Decimal" />
+            <Parameter Name="Total_Facturado" Mode="In" Type="Decimal" />
+            <Parameter Name="Total_Seguro" Mode="In" Type="Decimal" />
+            <Parameter Name="Total_Balance" Mode="In" Type="Decimal" />
+            <Parameter Name="Fecha" Mode="In" Type="DateTime" />
+            <Parameter Name="Id_Empleado" Mode="In" Type="Int32" />
+            <Parameter Name="Importe" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="ppInsertarCliente">
+            <Parameter Name="Nombre_Cliente" Mode="In" Type="String" />
+            <Parameter Name="Cedula_Cliente" Mode="In" Type="String" />
+            <Parameter Name="Id_Seguro" Mode="In" Type="Int32" />
+            <Parameter Name="Poliza" Mode="In" Type="String" />
+            <Parameter Name="Telefono" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CajaBDModelStoreContainer" CdmEntityContainer="CajaBDEntities">
+          <EntitySetMapping Name="CLIENTEs">
+            <EntityTypeMapping TypeName="CajaBDModel.CLIENTE">
+              <MappingFragment StoreEntitySet="CLIENTE">
+                <ScalarProperty Name="Id_Cliente" ColumnName="Id_Cliente" />
+                <ScalarProperty Name="Nombre_Cliente" ColumnName="Nombre_Cliente" />
+                <ScalarProperty Name="Cedula_Cliente" ColumnName="Cedula_Cliente" />
+                <ScalarProperty Name="Id_Seguro" ColumnName="Id_Seguro" />
+                <ScalarProperty Name="Poliza" ColumnName="Poliza" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EMPLEADOes">
+            <EntityTypeMapping TypeName="CajaBDModel.EMPLEADO">
+              <MappingFragment StoreEntitySet="EMPLEADO">
+                <ScalarProperty Name="Id_Empleado" ColumnName="Id_Empleado" />
+                <ScalarProperty Name="Nombre_Empleado" ColumnName="Nombre_Empleado" />
+                <ScalarProperty Name="Cedula_Empleado" ColumnName="Cedula_Empleado" />
+                <ScalarProperty Name="User" ColumnName="User" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FACTURAs">
+            <EntityTypeMapping TypeName="CajaBDModel.FACTURA">
+              <MappingFragment StoreEntitySet="FACTURA">
+                <ScalarProperty Name="Id_Factura" ColumnName="Id_Factura" />
+                <ScalarProperty Name="Id_Cliente" ColumnName="Id_Cliente" />
+                <ScalarProperty Name="Id_Servicio" ColumnName="Id_Servicio" />
+                <ScalarProperty Name="Codigo_Factura" ColumnName="Codigo_Factura" />
+                <ScalarProperty Name="Monto" ColumnName="Monto" />
+                <ScalarProperty Name="Des_Seguro" ColumnName="Des_Seguro" />
+                <ScalarProperty Name="Pagado" ColumnName="Pagado" />
+                <ScalarProperty Name="Total_Facturado" ColumnName="Total_Facturado" />
+                <ScalarProperty Name="Total_Seguro" ColumnName="Total_Seguro" />
+                <ScalarProperty Name="Total_Balance" ColumnName="Total_Balance" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Id_Empleado" ColumnName="Id_Empleado" />
+                <ScalarProperty Name="Importe" ColumnName="Importe" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="REPORTEs">
+            <EntityTypeMapping TypeName="CajaBDModel.REPORTE">
+              <MappingFragment StoreEntitySet="REPORTE">
+                <ScalarProperty Name="Id_Factura" ColumnName="Id_Factura" />
+                <ScalarProperty Name="Id_Cliente" ColumnName="Id_Cliente" />
+                <ScalarProperty Name="Id_Empleado" ColumnName="Id_Empleado" />
+                <ScalarProperty Name="Id_Seguro" ColumnName="Id_Seguro" />
+                <ScalarProperty Name="Importe" ColumnName="Importe" />
+                <ScalarProperty Name="Subtotal" ColumnName="Subtotal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SEGUROes">
+            <EntityTypeMapping TypeName="CajaBDModel.SEGURO">
+              <MappingFragment StoreEntitySet="SEGURO">
+                <ScalarProperty Name="Id_Seguro" ColumnName="Id_Seguro" />
+                <ScalarProperty Name="Nombre_Seguro" ColumnName="Nombre_Seguro" />
+                <ScalarProperty Name="Des_Porcentaje" ColumnName="Des_Porcentaje" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SERVICIOS">
+            <EntityTypeMapping TypeName="CajaBDModel.SERVICIO">
+              <MappingFragment StoreEntitySet="SERVICIOS">
+                <ScalarProperty Name="Id_Servicio" ColumnName="Id_Servicio" />
+                <ScalarProperty Name="Nombre_Servicio" ColumnName="Nombre_Servicio" />
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="ppIngresarFactura" FunctionName="CajaBDModel.Store.ppIngresarFactura" />
+          <FunctionImportMapping FunctionImportName="ppInsertarCliente" FunctionName="CajaBDModel.Store.ppInsertarCliente" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
