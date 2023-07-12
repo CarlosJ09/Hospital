@@ -52,7 +52,7 @@ namespace hospital.webApp.Controllers
             {
                 db.Cliente.Add(cliente);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index","Home");
             }
 
             return View(cliente);

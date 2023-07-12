@@ -1,11 +1,25 @@
 ﻿@model IEnumerable<hospital.webApp.Models.Transaccion>
-
+@using hospital.webApp.Models
+@using Microsoft.AspNet.Identity
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Index</h2>
+
+@{
+    //instanciar EF
+    PacientesEntities pe = new PacientesEntities();
+    //Asignar a una variable el Username atravez del metodo User.Identity.
+    string email = User.Identity.GetUserName().ToString();
+    
+    //Buscar Cliente en la instancia del EF y compararlo con email
+    //var cliente = pe.Cliente.Where(c => c.Email == email);
+    var clienteN = pe.Cliente.FirstOrDefault(c => c.Email == email);
+    string nombre = clienteN.NombreCompleto;
+    var transaccion = pe.Transaccion.Where(e => e.NombreCompletoCliente == nombre);
+}
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -51,50 +65,53 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.NombreCompletoCliente)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NombreServicio)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CodigoFactura)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Monto)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DescuentoSeguro)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TotalFacturado)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TotalSeguro)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TotalBalance)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Fecha)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NombreCompletoEmpleado)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Importe)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TransaccionConfirmada)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.IdFactura }) |
-            @Html.ActionLink("Details", "Details", new { id=item.IdFactura }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.IdFactura })
-        </td>
-    </tr>
-}
+
+
+    @foreach (var item in transaccion)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreCompletoCliente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreServicio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodigoFactura)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Monto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DescuentoSeguro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalFacturado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalSeguro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalBalance)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fecha)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreCompletoEmpleado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Importe)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TransaccionConfirmada)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.IdFactura }) |
+                @Html.ActionLink("Details", "Details", new { id = item.IdFactura }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.IdFactura })
+            </td>
+        </tr>
+    }
 
 </table>
