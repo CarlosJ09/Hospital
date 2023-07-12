@@ -24,13 +24,13 @@
                 <ul class="navbar-nav flex-grow-1">
                     <li>@Html.ActionLink("Sobre nosotros", "About", "Home", new { area = "" }, new { @class = "nav-link nav-font-color fs-4" })</li>
                     <li>@Html.ActionLink("Contactarnos", "Contact", "Home", new { area = "" }, new { @class = "nav-link nav-font-color fs-4" })</li>
-                    <li>@Html.ActionLink("Solicitar cita", "Contact", "Home", new { area = "" }, new { @class = "nav-link nav-font-color fs-4" })</li>
+                    <li>@Html.ActionLink("Solicitar cita", "Create", "Citas", new { area = "" }, new { @class = "nav-link nav-font-color fs-4" })</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
     </nav>
-    <div class="container body-content top-together">
+    <div class="container body-content top-together wrapper">
         @RenderBody()
         <hr />
         <footer class="text-center">
