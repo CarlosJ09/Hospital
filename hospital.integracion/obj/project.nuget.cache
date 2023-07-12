@@ -1,16 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zjGnKXBlBWUc+/wT12HA12UDwH9xfsqnnu/Hxz6TVzKfnOK+DXTAUcFvL0aJzTBnKKje2tbCxNLJmmDiCdjv0g==",
+  "dgSpecHash": "8IP3Do4xzkwJQkdxP7rW+Ygv8SuzBjoEOs6hZd3p5hKaAc6AkoBkU0XVbU0zNP1Qh3qDVL1NQJ6mmP2lwe1tjg==",
   "success": true,
   "projectFilePath": "C:\\Users\\donat\\source\\repos\\Hospital\\hospital.integracion\\hospital.integracion.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\donat\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.5\\microsoft.aspnetcore.openapi.7.0.5.nupkg.sha512",
-    "C:\\Users\\donat\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
-    "C:\\Users\\donat\\.nuget\\packages\\microsoft.openapi\\1.4.3\\microsoft.openapi.1.4.3.nupkg.sha512",
-    "C:\\Users\\donat\\.nuget\\packages\\swashbuckle.aspnetcore\\6.4.0\\swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
-    "C:\\Users\\donat\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.4.0\\swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
-    "C:\\Users\\donat\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.4.0\\swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",
-    "C:\\Users\\donat\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.4.0\\swashbuckle.aspnetcore.swaggerui.6.4.0.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }

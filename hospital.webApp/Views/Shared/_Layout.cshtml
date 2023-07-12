@@ -31,32 +31,50 @@
     <div class="container body-content top-together wrapper">
         @RenderBody()
         <hr />
-        <footer class="text-center">
+            <footer class="text-center ">
 
 
-            <div class="row">
-                <section class="col-md-4" aria-labelledby="gettingStartedTitle">
-                    <h2 id="gettingStartedTitle">Getting started</h2>
-                    @Html.ActionLink("Regístrate para recibir gratuitamente boletines informativos electrónicos", "Index", "Home", new { area = "" }, new { @class = "btn btn-outline-dark" })
-                 
-                </section>
-                <section class="col-md-4" aria-labelledby="librariesTitle">
-                    <h2 id="librariesTitle">Get more libraries</h2>
-                    @Html.ActionLink("Encuentra un médico", "Index", "Home", new { area = "" }, new { @class = "btn btn-outline-dark" })
+                <div class="row">
+                    <section class="col-md-4" aria-labelledby="gettingStartedTitle">
+                        <h2 id="gettingStartedTitle">Empezando</h2>
+                        @Html.ActionLink("Regístrate para recibir gratuitamente boletines informativos electrónicos", "Register", "Account", new { area = "" }, new { @class = "btn btn-outline-dark" })
 
-                </section>
-                <section class="col-md-4" aria-labelledby="hostingTitle">
-                    <h2 id="hostingTitle">Web Hosting</h2>
-                    @Html.ActionLink("Conoce sobre el hospital #1 de RD", "Index", "Home", new { area = "" }, new { @class = "btn btn-outline-dark" })
+                    </section>
 
-                </section>
-            </div>
+                    <section class="col-md-4" aria-labelledby="librariesTitle">
+                        <h2 id="librariesTitle">Contactanos</h2>
+                        @Html.ActionLink("Comunicate con nosotros por nuestra via telefonica o email", "Contact", "Home", new { area = "" }, new { @class = "btn btn-outline-dark" })
+
+                    </section>
+                    <section class="col-md-4" aria-labelledby="hostingTitle">
+                        <h2 id="hostingTitle">Conocenos</h2>
+                        @Html.ActionLink("Conoce sobre nosotros, el hospital reconocido como #1 de RD", "About", "Home", new { area = "" }, new { @class = "btn btn-outline-dark" })
+
+                    </section>
+                </div>
+
+                <div class="row">
+                    <section class="col-md-4" aria-labelledby="gettingStartedTitle">
+                        <h2 id="gettingStartedTitle">Asegura tu salud</h2>
+                        @Html.ActionLink("Pide una cita con nosotros para mejorar tu mañana", "Create", "Citas", new { area = "" }, new { @class = "btn btn-outline-dark" })
+                    </section>
+                    <section class="col-md-4" aria-labelledby="librariesTitle">
+                        <h2 id="librariesTitle">Recomiendanos</h2>
+                        @Html.ActionLink("Haz pasar la voz para que todos estemos mejor", "Index", "Home", new { area = "" }, new { @class = "btn btn-outline-dark" })
+
+                    </section>
+                    <section class="col-md-4" aria-labelledby="hostingTitle">
+                        <h2 id="hostingTitle">Contraseña para recordar</h2>
+                        @Html.ActionLink("Cambia tu contraseña por una que puedas recordar", "ChangePassword", "Manage", new { area = "" }, new { @class = "btn btn-outline-dark" })
+
+                    </section>
+                </div>
 
 
 
-            <img src="~/Resources/HOSPITAL INTECIANO.2 LOGO.png" class="img-footer" />
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
+                <img src="~/Resources/HOSPITAL INTECIANO.2 LOGO.png" class="img-footer" />
+                <p>&copy; @DateTime.Now.Year - Hospitec · Tu salud · Nuestra mision</p>
+            </footer>
     </div>
 
     @Scripts.Render("~/bundles/jquery")

@@ -21,9 +21,9 @@
     var transaccion = pe.Transaccion.Where(e => e.NombreCompletoCliente == nombre);
 }
 
-<p>
+<!--<p>
     @Html.ActionLink("Create New", "Create")
-</p>
+</p>-->
 <table class="table">
     <tr>
         <th>
@@ -44,21 +44,21 @@
         <th>
             @Html.DisplayNameFor(model => model.TotalFacturado)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TotalSeguro)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TotalBalance)
-        </th>
+        <!--<th>
+        @Html.DisplayNameFor(model => model.TotalSeguro)
+    </th>-->
+        <!--<th>
+        @Html.DisplayNameFor(model => model.TotalBalance)
+    </th>-->
         <th>
             @Html.DisplayNameFor(model => model.Fecha)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NombreCompletoEmpleado)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Importe)
-        </th>
+        <!--<th>
+        @Html.DisplayNameFor(model => model.NombreCompletoEmpleado)
+    </th>-->
+        <!--<th>
+        @Html.DisplayNameFor(model => model.Importe)
+    </th>-->
         <th>
             @Html.DisplayNameFor(model => model.TransaccionConfirmada)
         </th>
@@ -88,28 +88,28 @@
             <td>
                 @Html.DisplayFor(modelItem => item.TotalFacturado)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TotalSeguro)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TotalBalance)
-            </td>
+            <!--<td>
+        @Html.DisplayFor(modelItem => item.TotalSeguro)
+    </td>-->
+            <!--<td>
+        @Html.DisplayFor(modelItem => item.TotalBalance)
+    </td>-->
             <td>
                 @Html.DisplayFor(modelItem => item.Fecha)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NombreCompletoEmpleado)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Importe)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TransaccionConfirmada)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.IdFactura }) |
-                @Html.ActionLink("Details", "Details", new { id = item.IdFactura }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.IdFactura })
+            <!--<td>
+        @Html.DisplayFor(modelItem => item.NombreCompletoEmpleado)
+    </td>-->
+            <!--<td>
+        @Html.DisplayFor(modelItem => item.Importe)
+    </td>-->
+    <td>
+        @Html.DisplayFor(modelItem => item.TransaccionConfirmada)
+    </td>
+    <td>
+        @Html.ActionLink("Confirmar", "Edit", new { id = item.IdFactura }) |
+        <!--@Html.ActionLink("Details", "Details", new { id = item.IdFactura })-->
+            @Html.ActionLink("Delete", "Delete", new { id = item.IdFactura })
             </td>
         </tr>
     }

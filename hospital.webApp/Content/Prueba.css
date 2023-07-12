@@ -42,8 +42,8 @@ body{
 .img-main {
     height: auto;
     width: auto;
-    max-height: 540px;
-    max-width: 360px;
+    max-height: 1540px;
+    max-width: 1360px;
 }
 
 .conteiner-img-main{
@@ -72,4 +72,10 @@ body{
 
 footer {
     margin-top: auto;
+    
 }
+
+
+
+
+    
