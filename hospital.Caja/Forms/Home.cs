@@ -56,5 +56,11 @@ namespace hospital.Caja.Forms
             Cuadre m = new Cuadre();
             m.ShowDialog();
         }
+
+        private void btnOpenReporte_Click(object sender, EventArgs e)
+        {
+            Reportes r = new Reportes();
+            r.ShowDialog();
+        }
     }
 }

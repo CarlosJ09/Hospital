@@ -160,6 +160,7 @@
             this.btnOpenReporte.TabIndex = 4;
             this.btnOpenReporte.Text = "Reportes";
             this.btnOpenReporte.UseVisualStyleBackColor = true;
+            this.btnOpenReporte.Click += new System.EventHandler(this.btnOpenReporte_Click);
             // 
             // Home
             // 

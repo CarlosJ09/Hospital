@@ -173,6 +173,12 @@
     <Compile Include="Forms\ProcesosAFacturar.Designer.cs">
       <DependentUpon>ProcesosAFacturar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Reportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Reportes.Designer.cs">
+      <DependentUpon>Reportes.cs</DependentUpon>
+    </Compile>
     <Compile Include="MontoInicial.cs">
       <DependentUpon>CajaModel.tt</DependentUpon>
     </Compile>
@@ -212,6 +218,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ProcesosAFacturar.resx">
       <DependentUpon>ProcesosAFacturar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ReporteFactura.rdlc" />
+    <EmbeddedResource Include="Forms\Reportes.resx">
+      <DependentUpon>Reportes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
