@@ -79,6 +79,7 @@
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
@@ -123,6 +124,12 @@
     <Compile Include="FACTURA.cs">
       <DependentUpon>CajaOfflineModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="FacturacionDiaria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FacturacionDiaria.Designer.cs">
+      <DependentUpon>FacturacionDiaria.cs</DependentUpon>
+    </Compile>
     <Compile Include="FacturacionOnline.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +154,9 @@
       <DependentUpon>CajaOfflineModel.tt</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="FacturacionDiaria.resx">
+      <DependentUpon>FacturacionDiaria.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FacturacionOnline.resx">
       <DependentUpon>FacturacionOnline.cs</DependentUpon>
     </EmbeddedResource>
@@ -257,6 +267,12 @@
     <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PruebaIntegracion\PruebaIntegracion.csproj">
+      <Project>{8CC9A4F7-D065-407D-9C59-4267751DA838}</Project>
+      <Name>PruebaIntegracion</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

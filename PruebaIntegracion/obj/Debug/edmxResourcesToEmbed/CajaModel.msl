@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CajaBDModelStoreContainer" CdmEntityContainer="CajaBDEntities">
+    <EntitySetMapping Name="CLIENTEs">
+      <EntityTypeMapping TypeName="CajaBDModel.CLIENTE">
+        <MappingFragment StoreEntitySet="CLIENTE">
+          <ScalarProperty Name="Id_Cliente" ColumnName="Id_Cliente" />
+          <ScalarProperty Name="Nombre_Cliente" ColumnName="Nombre_Cliente" />
+          <ScalarProperty Name="Cedula_Cliente" ColumnName="Cedula_Cliente" />
+          <ScalarProperty Name="Id_Seguro" ColumnName="Id_Seguro" />
+          <ScalarProperty Name="Poliza" ColumnName="Poliza" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EMPLEADOes">
+      <EntityTypeMapping TypeName="CajaBDModel.EMPLEADO">
+        <MappingFragment StoreEntitySet="EMPLEADO">
+          <ScalarProperty Name="Id_Empleado" ColumnName="Id_Empleado" />
+          <ScalarProperty Name="Nombre_Empleado" ColumnName="Nombre_Empleado" />
+          <ScalarProperty Name="Cedula_Empleado" ColumnName="Cedula_Empleado" />
+          <ScalarProperty Name="User" ColumnName="User" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FACTURAs">
+      <EntityTypeMapping TypeName="CajaBDModel.FACTURA">
+        <MappingFragment StoreEntitySet="FACTURA">
+          <ScalarProperty Name="Id_Factura" ColumnName="Id_Factura" />
+          <ScalarProperty Name="Id_Cliente" ColumnName="Id_Cliente" />
+          <ScalarProperty Name="Id_Servicio" ColumnName="Id_Servicio" />
+          <ScalarProperty Name="Codigo_Factura" ColumnName="Codigo_Factura" />
+          <ScalarProperty Name="Monto" ColumnName="Monto" />
+          <ScalarProperty Name="Des_Seguro" ColumnName="Des_Seguro" />
+          <ScalarProperty Name="Pagado" ColumnName="Pagado" />
+          <ScalarProperty Name="Total_Facturado" ColumnName="Total_Facturado" />
+          <ScalarProperty Name="Total_Seguro" ColumnName="Total_Seguro" />
+          <ScalarProperty Name="Total_Balance" ColumnName="Total_Balance" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Id_Empleado" ColumnName="Id_Empleado" />
+          <ScalarProperty Name="Importe" ColumnName="Importe" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="REPORTEs">
+      <EntityTypeMapping TypeName="CajaBDModel.REPORTE">
+        <MappingFragment StoreEntitySet="REPORTE">
+          <ScalarProperty Name="Id_Factura" ColumnName="Id_Factura" />
+          <ScalarProperty Name="Id_Cliente" ColumnName="Id_Cliente" />
+          <ScalarProperty Name="Id_Empleado" ColumnName="Id_Empleado" />
+          <ScalarProperty Name="Id_Seguro" ColumnName="Id_Seguro" />
+          <ScalarProperty Name="Importe" ColumnName="Importe" />
+          <ScalarProperty Name="Subtotal" ColumnName="Subtotal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SEGUROes">
+      <EntityTypeMapping TypeName="CajaBDModel.SEGURO">
+        <MappingFragment StoreEntitySet="SEGURO">
+          <ScalarProperty Name="Id_Seguro" ColumnName="Id_Seguro" />
+          <ScalarProperty Name="Nombre_Seguro" ColumnName="Nombre_Seguro" />
+          <ScalarProperty Name="Des_Porcentaje" ColumnName="Des_Porcentaje" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SERVICIOS">
+      <EntityTypeMapping TypeName="CajaBDModel.SERVICIO">
+        <MappingFragment StoreEntitySet="SERVICIOS">
+          <ScalarProperty Name="Id_Servicio" ColumnName="Id_Servicio" />
+          <ScalarProperty Name="Nombre_Servicio" ColumnName="Nombre_Servicio" />
+          <ScalarProperty Name="Precio" ColumnName="Precio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="ppIngresarFactura" FunctionName="CajaBDModel.Store.ppIngresarFactura" />
+    <FunctionImportMapping FunctionImportName="ppInsertarCliente" FunctionName="CajaBDModel.Store.ppInsertarCliente" />
+  </EntityContainerMapping>
+</Mapping>

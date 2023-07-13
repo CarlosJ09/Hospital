@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CajaOfflineModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CLIENTE">
+    <Key>
+      <PropertyRef Name="Id_Cliente" />
+    </Key>
+    <Property Name="Id_Cliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre_Cliente" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Cedula_Cliente" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="Id_Seguro" Type="Int32" />
+    <Property Name="Poliza" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Telefono" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="EMPLEADO">
+    <Key>
+      <PropertyRef Name="Id_Empleado" />
+    </Key>
+    <Property Name="Id_Empleado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre_Empleado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Cedula_Empleado" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="User" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="FACTURA">
+    <Key>
+      <PropertyRef Name="Id_Factura" />
+      <PropertyRef Name="Id_Cliente" />
+      <PropertyRef Name="Id_Servicio" />
+    </Key>
+    <Property Name="Id_Factura" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Id_Cliente" Type="Int32" Nullable="false" />
+    <Property Name="Id_Servicio" Type="Int32" Nullable="false" />
+    <Property Name="Codigo_Factura" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Monto" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Des_Seguro" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Pagado" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Total_Facturado" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Total_Seguro" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Total_Balance" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Fecha" Type="DateTime" Precision="0" />
+    <Property Name="Id_Empleado" Type="Int32" />
+    <Property Name="Importe" Type="Decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="REPORTE">
+    <Key>
+      <PropertyRef Name="Id_Factura" />
+      <PropertyRef Name="Id_Cliente" />
+    </Key>
+    <Property Name="Id_Factura" Type="Int32" Nullable="false" />
+    <Property Name="Id_Cliente" Type="Int32" Nullable="false" />
+    <Property Name="Id_Empleado" Type="Int32" />
+    <Property Name="Id_Seguro" Type="Int32" />
+    <Property Name="Importe" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Subtotal" Type="Decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="SEGURO">
+    <Key>
+      <PropertyRef Name="Id_Seguro" />
+    </Key>
+    <Property Name="Id_Seguro" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre_Seguro" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="Des_Porcentaje" Type="Decimal" Precision="3" Scale="2" />
+  </EntityType>
+  <EntityType Name="SERVICIOS">
+    <Key>
+      <PropertyRef Name="Id_Servicio" />
+    </Key>
+    <Property Name="Id_Servicio" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre_Servicio" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Precio" Type="Decimal" Precision="9" Scale="2" />
+  </EntityType>
+  <EntityContainer Name="CajaOfflineEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CLIENTE" EntityType="Self.CLIENTE" />
+    <EntitySet Name="EMPLEADO" EntityType="Self.EMPLEADO" />
+    <EntitySet Name="FACTURA" EntityType="Self.FACTURA" />
+    <EntitySet Name="REPORTE" EntityType="Self.REPORTE" />
+    <EntitySet Name="SEGURO" EntityType="Self.SEGURO" />
+    <EntitySet Name="SERVICIOS" EntityType="Self.SERVICIOS" />
+  </EntityContainer>
+</Schema>

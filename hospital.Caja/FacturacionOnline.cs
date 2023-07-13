@@ -1,6 +1,8 @@
-﻿using System;
+﻿using PruebaIntegracion;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -14,10 +16,14 @@ namespace hospital.Caja
 {
     public partial class FacturacionOnline : Form
     {
+        double totalFacturado = 0;
+        double totalSeguro = 0;
+        double totalImporte = 0;
+        double pagarBalance = 0; 
         public FacturacionOnline()
         {
             InitializeComponent();
-            lblShow_Fecha.Text =  DateTime.Today.ToString("dd/MM/yyyy");
+            
 
         }
 
@@ -61,7 +67,7 @@ namespace hospital.Caja
 
         private void label13_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void label22_Click(object sender, EventArgs e)
@@ -69,37 +75,39 @@ namespace hospital.Caja
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
-            WSPrueba.WSBDSoapClient ws = new WSPrueba.WSBDSoapClient();
+            //WSPrueba.WSBDSoapClient ws = new WSPrueba.WSBDSoapClient();
 
-            try
-            {
-                ws.crearFactura("Rafael Pichardo", "40231347119", 1, "9999", "8094401615");
-            }
-            catch(Exception er)
-            {
-                MessageBox.Show(er.Message);
-            }
-        
+            //try
+            //{
+            //    ws.crearFactura("Rafael Pichardo", "40231347119", 1, "9999", "8094401615");
+            //}
+            //catch(Exception er)
+            //{
+            //    MessageBox.Show(er.Message);
+            //}
+
+
+
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
            
-            int Codigo = int.Parse(txtCodigo.Text);
-            CajaOfflineEntities cajaBDofflineEntities = new CajaOfflineEntities();
-            try
-            {
-                var servicio = cajaBDofflineEntities.SERVICIOS.FirstOrDefault(s => s.Id_Servicio == Codigo);
-                txtDescripcion.Text = servicio.Nombre_Servicio;
-                txtPrecio.Text = servicio.Precio.ToString();
+            //int Codigo = int.Parse(txtCodigo.Text);
+            //CajaOfflineEntities cajaBDofflineEntities = new CajaOfflineEntities();
+            //try
+            //{
+            //    var servicio = cajaBDofflineEntities.SERVICIOS.FirstOrDefault(s => s.Id_Servicio == Codigo);
+            //    txtDescripcion.Text = servicio.Nombre_Servicio;
+            //    txtPrecio.Text = servicio.Precio.ToString();
 
-            }
-            catch (Exception er)
-            {
-                MessageBox.Show(er.Message);
-            }
+            //}
+            //catch (Exception er)
+            //{
+            //    MessageBox.Show(er.Message);
+            //}
             
             
         }
@@ -111,7 +119,7 @@ namespace hospital.Caja
             var seguro = cajaBDofflineEntities.SEGURO.FirstOrDefault(s => s.Nombre_Seguro == lbl_ShowSeguro.Text);
             float desSeguro = (float)seguro.Des_Porcentaje * float.Parse(txtPrecio.Text);
             float importe = 0.5f * (float.Parse(txtPrecio.Text) - desSeguro);
-           desSeguro *= 1.00f;
+            desSeguro *= 1.00f;
             importe *= 1.00f;
             string[] fila = { txtCodigo.Text, txtDescripcion.Text, txtPrecio.Text, desSeguro.ToString(), importe.ToString() };
             lvwFactura.Items.Add(new ListViewItem(fila));
@@ -135,6 +143,69 @@ namespace hospital.Caja
                 }
             }
             calcularTotales();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            FacturacionDiaria formulario = new FacturacionDiaria();
+
+            formulario.ShowDialog();
+        }
+
+        private void lblShow_Tel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPrecio_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void txtDescripcion_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCodigo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblShow_Cliente_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblCodigo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblShow_Total_Seguro_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lvwFactura_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CajaBDEntities cajaBDofflineEntities = new CajaBDEntities();
+            string connectionString = ConfigurationManager.ConnectionStrings["cs"].ConnectionString;
         }
     }
 }

@@ -1,0 +1,228 @@
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\Hospital\Hospital\hospital.Caja\bin\Debug\hospital.Caja.exe.config
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\Hospital\Hospital\hospital.Caja\bin\Debug\hospital.Caja.exe
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\Hospital\Hospital\hospital.Caja\bin\Debug\hospital.Caja.pdb
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\Hospital\Hospital\hospital.Caja\obj\Debug\hospital.Caja.csproj.AssemblyReference.cache
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\Hospital\Hospital\hospital.Caja\obj\Debug\hospital.Caja.csproj.SuggestedBindingRedirects.cache
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\Hospital\Hospital\hospital.Caja\obj\Debug\hospital.Caja.FacturacionOnline.resources
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\Hospital\Hospital\hospital.Caja\obj\Debug\hospital.Caja.Properties.Resources.resources
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\Hospital\Hospital\hospital.Caja\obj\Debug\hospital.Caja.csproj.GenerateResource.cache
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\Hospital\Hospital\hospital.Caja\obj\Debug\hospital.Caja.csproj.CoreCompileInputs.cache
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\Hospital\Hospital\hospital.Caja\obj\Debug\hospital.Caja.exe
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\Hospital\Hospital\hospital.Caja\obj\Debug\hospital.Caja.pdb
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\HospitalPrueba\Hospital\hospital.Caja\bin\Debug\hospital.Caja.exe.config
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\HospitalPrueba\Hospital\hospital.Caja\bin\Debug\hospital.Caja.exe
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\HospitalPrueba\Hospital\hospital.Caja\bin\Debug\hospital.Caja.pdb
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\HospitalPrueba\Hospital\hospital.Caja\obj\Debug\hospital.Caja.csproj.AssemblyReference.cache
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\HospitalPrueba\Hospital\hospital.Caja\obj\Debug\hospital.Caja.csproj.SuggestedBindingRedirects.cache
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\HospitalPrueba\Hospital\hospital.Caja\obj\Debug\hospital.Caja.FacturacionOnline.resources
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\HospitalPrueba\Hospital\hospital.Caja\obj\Debug\hospital.Caja.ProcesosAFacturar.resources
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\HospitalPrueba\Hospital\hospital.Caja\obj\Debug\hospital.Caja.Properties.Resources.resources
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\HospitalPrueba\Hospital\hospital.Caja\obj\Debug\hospital.Caja.csproj.GenerateResource.cache
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\HospitalPrueba\Hospital\hospital.Caja\obj\Debug\hospital.Caja.csproj.CoreCompileInputs.cache
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\HospitalPrueba\Hospital\hospital.Caja\obj\Debug\hospital.Caja.exe
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\HospitalPrueba\Hospital\hospital.Caja\obj\Debug\hospital.Caja.pdb
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\HospitalPrueba\Hospital\hospital.Caja\bin\Debug\EntityFramework.dll
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\HospitalPrueba\Hospital\hospital.Caja\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\HospitalPrueba\Hospital\hospital.Caja\bin\Debug\EntityFramework.xml
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\HospitalPrueba\Hospital\hospital.Caja\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\HospitalPrueba\Hospital\hospital.Caja\obj\Debug\hospital.Caja.csproj.CopyComplete
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\HospitalPrueba\Hospital\hospital.Caja\bin\Debug\CajaOffline.mdf
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\HospitalPrueba\Hospital\hospital.Caja\bin\Debug\CajaOffline_log.ldf
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\HospitalPrueba\Hospital\hospital.Caja\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\HospitalPrueba\Hospital\hospital.Caja\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\HospitalPrueba\Hospital\hospital.Caja\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\HospitalPrueba\Hospital\hospital.Caja\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\HospitalPrueba\Hospital\hospital.Caja\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\HospitalPrueba\Hospital\hospital.Caja\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\HospitalPrueba\Hospital\hospital.Caja\bin\Debug\Microsoft.ReportViewer.Design.dll
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\HospitalPrueba\Hospital\hospital.Caja\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\HospitalPrueba\Hospital\hospital.Caja\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\HospitalPrueba\Hospital\hospital.Caja\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\HospitalPrueba\Hospital\hospital.Caja\bin\Debug\EnvDTE.dll
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\HospitalPrueba\Hospital\hospital.Caja\bin\Debug\stdole.dll
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\HospitalPrueba\Hospital\hospital.Caja\bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\HospitalPrueba\Hospital\hospital.Caja\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\HospitalPrueba\Hospital\hospital.Caja\bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\HospitalPrueba\Hospital\hospital.Caja\bin\Debug\it\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\HospitalPrueba\Hospital\hospital.Caja\bin\Debug\ja\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\HospitalPrueba\Hospital\hospital.Caja\bin\Debug\ko\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\HospitalPrueba\Hospital\hospital.Caja\bin\Debug\pt\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\HospitalPrueba\Hospital\hospital.Caja\bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\HospitalPrueba\Hospital\hospital.Caja\bin\Debug\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\HospitalPrueba\Hospital\hospital.Caja\bin\Debug\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\HospitalPrueba\Hospital\hospital.Caja\bin\Debug\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\HospitalPrueba\Hospital\hospital.Caja\bin\Debug\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\HospitalPrueba\Hospital\hospital.Caja\bin\Debug\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\HospitalPrueba\Hospital\hospital.Caja\bin\Debug\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\HospitalPrueba\Hospital\hospital.Caja\bin\Debug\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\HospitalPrueba\Hospital\hospital.Caja\bin\Debug\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\HospitalPrueba\Hospital\hospital.Caja\bin\Debug\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\HospitalPrueba\Hospital\hospital.Caja\bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\HospitalPrueba\Hospital\hospital.Caja\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\HospitalPrueba\Hospital\hospital.Caja\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\HospitalPrueba\Hospital\hospital.Caja\bin\Debug\de\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\HospitalPrueba\Hospital\hospital.Caja\bin\Debug\es\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\HospitalPrueba\Hospital\hospital.Caja\bin\Debug\fr\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\HospitalPrueba\Hospital\hospital.Caja\bin\Debug\it\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\HospitalPrueba\Hospital\hospital.Caja\bin\Debug\ja\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\HospitalPrueba\Hospital\hospital.Caja\bin\Debug\ko\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\HospitalPrueba\Hospital\hospital.Caja\bin\Debug\pt\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\HospitalPrueba\Hospital\hospital.Caja\bin\Debug\ru\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\HospitalPrueba\Hospital\hospital.Caja\bin\Debug\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\HospitalPrueba\Hospital\hospital.Caja\bin\Debug\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\HospitalPrueba\Hospital\hospital.Caja\bin\Debug\de\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\HospitalPrueba\Hospital\hospital.Caja\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\HospitalPrueba\Hospital\hospital.Caja\bin\Debug\fr\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\HospitalPrueba\Hospital\hospital.Caja\bin\Debug\it\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\HospitalPrueba\Hospital\hospital.Caja\bin\Debug\ja\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\HospitalPrueba\Hospital\hospital.Caja\bin\Debug\ko\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\HospitalPrueba\Hospital\hospital.Caja\bin\Debug\pt\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\HospitalPrueba\Hospital\hospital.Caja\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\HospitalPrueba\Hospital\hospital.Caja\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\LeonelLora\Desktop\Tareas Adelantadas\HospitalPrueba\Hospital\hospital.Caja\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\maulo\OneDrive\Escritorio\Hospital\hospital.Caja\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+C:\Users\maulo\OneDrive\Escritorio\Hospital\hospital.Caja\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+C:\Users\maulo\OneDrive\Escritorio\Hospital\hospital.Caja\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+C:\Users\maulo\OneDrive\Escritorio\Hospital\hospital.Caja\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\Users\maulo\OneDrive\Escritorio\Hospital\hospital.Caja\bin\Debug\CajaOffline.mdf
+C:\Users\maulo\OneDrive\Escritorio\Hospital\hospital.Caja\bin\Debug\CajaOffline_log.ldf
+C:\Users\maulo\OneDrive\Escritorio\Hospital\hospital.Caja\bin\Debug\hospital.Caja.exe.config
+C:\Users\maulo\OneDrive\Escritorio\Hospital\hospital.Caja\bin\Debug\hospital.Caja.exe
+C:\Users\maulo\OneDrive\Escritorio\Hospital\hospital.Caja\bin\Debug\hospital.Caja.pdb
+C:\Users\maulo\OneDrive\Escritorio\Hospital\hospital.Caja\bin\Debug\EntityFramework.dll
+C:\Users\maulo\OneDrive\Escritorio\Hospital\hospital.Caja\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\maulo\OneDrive\Escritorio\Hospital\hospital.Caja\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\maulo\OneDrive\Escritorio\Hospital\hospital.Caja\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+C:\Users\maulo\OneDrive\Escritorio\Hospital\hospital.Caja\bin\Debug\Microsoft.ReportViewer.Design.dll
+C:\Users\maulo\OneDrive\Escritorio\Hospital\hospital.Caja\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\Users\maulo\OneDrive\Escritorio\Hospital\hospital.Caja\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\maulo\OneDrive\Escritorio\Hospital\hospital.Caja\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\maulo\OneDrive\Escritorio\Hospital\hospital.Caja\bin\Debug\EnvDTE.dll
+C:\Users\maulo\OneDrive\Escritorio\Hospital\hospital.Caja\bin\Debug\stdole.dll
+C:\Users\maulo\OneDrive\Escritorio\Hospital\hospital.Caja\bin\Debug\EntityFramework.xml
+C:\Users\maulo\OneDrive\Escritorio\Hospital\hospital.Caja\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\maulo\OneDrive\Escritorio\Hospital\hospital.Caja\bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\maulo\OneDrive\Escritorio\Hospital\hospital.Caja\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\maulo\OneDrive\Escritorio\Hospital\hospital.Caja\bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\maulo\OneDrive\Escritorio\Hospital\hospital.Caja\bin\Debug\it\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\maulo\OneDrive\Escritorio\Hospital\hospital.Caja\bin\Debug\ja\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\maulo\OneDrive\Escritorio\Hospital\hospital.Caja\bin\Debug\ko\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\maulo\OneDrive\Escritorio\Hospital\hospital.Caja\bin\Debug\pt\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\maulo\OneDrive\Escritorio\Hospital\hospital.Caja\bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\maulo\OneDrive\Escritorio\Hospital\hospital.Caja\bin\Debug\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\maulo\OneDrive\Escritorio\Hospital\hospital.Caja\bin\Debug\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\maulo\OneDrive\Escritorio\Hospital\hospital.Caja\bin\Debug\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\maulo\OneDrive\Escritorio\Hospital\hospital.Caja\bin\Debug\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\maulo\OneDrive\Escritorio\Hospital\hospital.Caja\bin\Debug\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\maulo\OneDrive\Escritorio\Hospital\hospital.Caja\bin\Debug\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\maulo\OneDrive\Escritorio\Hospital\hospital.Caja\bin\Debug\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\maulo\OneDrive\Escritorio\Hospital\hospital.Caja\bin\Debug\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\maulo\OneDrive\Escritorio\Hospital\hospital.Caja\bin\Debug\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\maulo\OneDrive\Escritorio\Hospital\hospital.Caja\bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\maulo\OneDrive\Escritorio\Hospital\hospital.Caja\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\maulo\OneDrive\Escritorio\Hospital\hospital.Caja\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\maulo\OneDrive\Escritorio\Hospital\hospital.Caja\bin\Debug\de\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\maulo\OneDrive\Escritorio\Hospital\hospital.Caja\bin\Debug\es\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\maulo\OneDrive\Escritorio\Hospital\hospital.Caja\bin\Debug\fr\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\maulo\OneDrive\Escritorio\Hospital\hospital.Caja\bin\Debug\it\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\maulo\OneDrive\Escritorio\Hospital\hospital.Caja\bin\Debug\ja\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\maulo\OneDrive\Escritorio\Hospital\hospital.Caja\bin\Debug\ko\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\maulo\OneDrive\Escritorio\Hospital\hospital.Caja\bin\Debug\pt\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\maulo\OneDrive\Escritorio\Hospital\hospital.Caja\bin\Debug\ru\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\maulo\OneDrive\Escritorio\Hospital\hospital.Caja\bin\Debug\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\maulo\OneDrive\Escritorio\Hospital\hospital.Caja\bin\Debug\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\maulo\OneDrive\Escritorio\Hospital\hospital.Caja\bin\Debug\de\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\maulo\OneDrive\Escritorio\Hospital\hospital.Caja\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\maulo\OneDrive\Escritorio\Hospital\hospital.Caja\bin\Debug\fr\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\maulo\OneDrive\Escritorio\Hospital\hospital.Caja\bin\Debug\it\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\maulo\OneDrive\Escritorio\Hospital\hospital.Caja\bin\Debug\ja\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\maulo\OneDrive\Escritorio\Hospital\hospital.Caja\bin\Debug\ko\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\maulo\OneDrive\Escritorio\Hospital\hospital.Caja\bin\Debug\pt\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\maulo\OneDrive\Escritorio\Hospital\hospital.Caja\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\maulo\OneDrive\Escritorio\Hospital\hospital.Caja\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\maulo\OneDrive\Escritorio\Hospital\hospital.Caja\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\maulo\OneDrive\Escritorio\Hospital\hospital.Caja\obj\Debug\hospital.Caja.csproj.AssemblyReference.cache
+C:\Users\maulo\OneDrive\Escritorio\Hospital\hospital.Caja\obj\Debug\hospital.Caja.csproj.SuggestedBindingRedirects.cache
+C:\Users\maulo\OneDrive\Escritorio\Hospital\hospital.Caja\obj\Debug\hospital.Caja.FacturacionOnline.resources
+C:\Users\maulo\OneDrive\Escritorio\Hospital\hospital.Caja\obj\Debug\hospital.Caja.ProcesosAFacturar.resources
+C:\Users\maulo\OneDrive\Escritorio\Hospital\hospital.Caja\obj\Debug\hospital.Caja.Properties.Resources.resources
+C:\Users\maulo\OneDrive\Escritorio\Hospital\hospital.Caja\obj\Debug\hospital.Caja.csproj.GenerateResource.cache
+C:\Users\maulo\OneDrive\Escritorio\Hospital\hospital.Caja\obj\Debug\hospital.Caja.csproj.CoreCompileInputs.cache
+C:\Users\maulo\OneDrive\Escritorio\Hospital\hospital.Caja\obj\Debug\hospital.Caja.csproj.CopyComplete
+C:\Users\maulo\OneDrive\Escritorio\Hospital\hospital.Caja\obj\Debug\hospital.Caja.exe
+C:\Users\maulo\OneDrive\Escritorio\Hospital\hospital.Caja\obj\Debug\hospital.Caja.pdb
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\bin\Debug\CajaOffline.mdf
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\bin\Debug\CajaOffline_log.ldf
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\bin\Debug\hospital.Caja.exe.config
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\bin\Debug\hospital.Caja.exe
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\bin\Debug\hospital.Caja.pdb
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\bin\Debug\EntityFramework.dll
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\bin\Debug\Microsoft.ReportViewer.Design.dll
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\bin\Debug\EnvDTE.dll
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\bin\Debug\stdole.dll
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\bin\Debug\EntityFramework.xml
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\bin\Debug\it\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\bin\Debug\ja\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\bin\Debug\ko\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\bin\Debug\pt\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\bin\Debug\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\bin\Debug\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\bin\Debug\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\bin\Debug\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\bin\Debug\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\bin\Debug\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\bin\Debug\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\bin\Debug\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\bin\Debug\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\bin\Debug\de\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\bin\Debug\es\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\bin\Debug\fr\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\bin\Debug\it\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\bin\Debug\ja\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\bin\Debug\ko\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\bin\Debug\pt\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\bin\Debug\ru\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\bin\Debug\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\bin\Debug\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\bin\Debug\de\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\bin\Debug\fr\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\bin\Debug\it\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\bin\Debug\ja\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\bin\Debug\ko\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\bin\Debug\pt\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\obj\Debug\hospital.Caja.csproj.AssemblyReference.cache
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\obj\Debug\hospital.Caja.csproj.SuggestedBindingRedirects.cache
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\obj\Debug\hospital.Caja.FacturacionOnline.resources
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\obj\Debug\hospital.Caja.ProcesosAFacturar.resources
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\obj\Debug\hospital.Caja.Properties.Resources.resources
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\obj\Debug\hospital.Caja.csproj.GenerateResource.cache
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\obj\Debug\hospital.Caja.csproj.CoreCompileInputs.cache
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\obj\Debug\hospital.Caja.csproj.CopyComplete
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\obj\Debug\hospital.Caja.exe
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\obj\Debug\hospital.Caja.pdb
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\obj\Debug\hospital.Caja.FacturacionDiaria.resources
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\bin\Debug\PruebaIntegracion.dll
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\bin\Debug\PruebaIntegracion.pdb
+C:\Users\maulo\source\repos\Hospital\hospital.Caja\bin\Debug\PruebaIntegracion.dll.config
