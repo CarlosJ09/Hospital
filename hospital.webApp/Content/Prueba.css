@@ -1,0 +1,81 @@
+﻿.image-link {
+    display: inline-block;
+    width: 310px; /* Ajusta el ancho de acuerdo a tus necesidades */
+    height: 110px; /* Ajusta la altura de acuerdo a tus necesidades */
+    padding: 0px;
+    margin: 0px;
+    margin-right: 2%;
+    background-image: url('../resources/hospitec logo, nombre, slogan.png'); /* Ruta de la imagen */
+    background-size: cover;
+    /* Otros estilos CSS que desees aplicar */
+}
+
+.carousel-inner {
+    height: 500px;
+    margin-bottom: 50px;
+}
+
+body{
+    background-color:white
+}
+
+#buttom-first-caroussel-slide {
+    color:darkgoldenrod;
+    font-size:400%;
+}
+
+#navegation-bar {
+    background-color: #e3f2fd;
+    margin-bottom:0px;
+}
+
+.nav-font-color{
+    color: black;
+
+}
+
+.top-together {
+    margin-top: 0px;
+    padding-top: 0px
+}
+
+.img-main {
+    height: auto;
+    width: auto;
+    max-height: 1540px;
+    max-width: 1360px;
+}
+
+.conteiner-img-main{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+}
+
+.item-main{
+    margin-right:auto;
+}
+
+.img-footer {
+    height: auto;
+    width: auto;
+    max-height: 140px;
+    max-width: 160px;
+}
+
+.wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    margin-top: auto;
+    
+}
+
+
+
+
+    

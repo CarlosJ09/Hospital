@@ -1,0 +1,71 @@
+﻿@model IEnumerable<hospital.webApp.Models.Cliente>
+@using hospital.webApp.Models
+@using Microsoft.AspNet.Identity
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+@{
+    //instanciar EF
+    PacientesEntities pe = new PacientesEntities();
+    //Asignar a una variable el Username atravez del metodo User.Identity.
+    string email = User.Identity.GetUserName().ToString();
+    //Buscar Cliente en la instancia del EF y compararlo con email
+    var cliente = pe.Cliente.Where(c => c.Email == email);
+}
+
+
+
+<p>
+    <!--@Html.ActionLink("Create New", "Create")-->
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NombreCompleto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cedula)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telefono)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Poliza)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in cliente)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreCompleto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cedula)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefono)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Poliza)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.IdCliente }) |
+                @Html.ActionLink("Details", "Details", new { id = item.IdCliente }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.IdCliente })
+            </td>
+        </tr>
+    }
+
+</table>

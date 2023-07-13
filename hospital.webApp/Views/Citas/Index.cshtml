@@ -1,0 +1,66 @@
+﻿@model IEnumerable<hospital.webApp.Models.Cita>
+@using hospital.webApp.Models
+@using Microsoft.AspNet.Identity
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+@{
+    //instanciar EF
+    PacientesEntities pe = new PacientesEntities();
+    //Asignar a una variable el Username atravez del metodo User.Identity.
+    string email = User.Identity.GetUserName().ToString();
+
+    //Buscar Cliente en la instancia del EF y compararlo con email
+    //var cliente = pe.Cliente.Where(c => c.Email == email);
+    var clienteN = pe.Cliente.FirstOrDefault(c => c.Email == email);
+    string nombre = clienteN.IdCliente.ToString();
+    var cita = pe.Cita.Where(e => e.IdCliente.ToString() == nombre);
+    
+}
+
+
+
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <!--<th>
+        @Html.DisplayNameFor(model => model.IdCliente)
+    </th>-->
+        <th>
+            @Html.DisplayNameFor(model => model.FechaFormulario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NombreServicio)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in cita)
+    {
+        <tr>
+            <!--<td>
+        @Html.DisplayFor(modelItem => item.IdCliente)
+    </td>-->
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaFormulario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreServicio)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.IdCita }) |
+                @Html.ActionLink("Details", "Details", new { id = item.IdCita }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.IdCita })
+            </td>
+        </tr>
+    }
+
+</table>
