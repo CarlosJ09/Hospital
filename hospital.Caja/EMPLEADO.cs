@@ -17,7 +17,7 @@ namespace hospital.Caja
         public int Id_Empleado { get; set; }
         public string Nombre_Empleado { get; set; }
         public string Cedula_Empleado { get; set; }
-        public string User { get; set; }
-        public string Password { get; set; }
+        public string Usuario { get; set; }
+        public string Clave { get; set; }
     }
 }

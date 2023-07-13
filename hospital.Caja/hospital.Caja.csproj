@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -13,6 +12,9 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -25,11 +27,8 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -52,10 +51,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
@@ -79,6 +78,7 @@
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
@@ -94,63 +94,123 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CajaOfflineModel.Context.cs">
+    <Compile Include="CajaModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CajaOfflineModel.Context.tt</DependentUpon>
+      <DependentUpon>CajaModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="CajaOfflineModel.cs">
+    <Compile Include="CajaModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CajaOfflineModel.tt</DependentUpon>
+      <DependentUpon>CajaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="CajaOfflineModel.Designer.cs">
+    <Compile Include="CajaModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CajaOfflineModel.edmx</DependentUpon>
+      <DependentUpon>CajaModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="CLIENTE.cs">
-      <DependentUpon>CajaOfflineModel.tt</DependentUpon>
+      <DependentUpon>CajaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Connected Services\WSPrueba\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Dataset.cs">
+      <DependentUpon>Dataset.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dataset.xsd</DependentUpon>
+    </Compile>
     <Compile Include="EMPLEADO.cs">
-      <DependentUpon>CajaOfflineModel.tt</DependentUpon>
+      <DependentUpon>CajaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="FACTURA.cs">
-      <DependentUpon>CajaOfflineModel.tt</DependentUpon>
+      <DependentUpon>CajaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="FacturacionOnline.cs">
+    <Compile Include="Forms\Cuadre.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FacturacionOnline.Designer.cs">
+    <Compile Include="Forms\Cuadre.Designer.cs">
+      <DependentUpon>Cuadre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FacturacionOnline.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FacturacionOnline.Designer.cs">
       <DependentUpon>FacturacionOnline.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProcesosAFacturar.cs">
+    <Compile Include="Forms\FacturaImpresion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProcesosAFacturar.Designer.cs">
+    <Compile Include="Forms\FacturaImpresion.Designer.cs">
+      <DependentUpon>FacturaImpresion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MontoInicial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MontoInicial.Designer.cs">
+      <DependentUpon>MontoInicial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ProcesosAFacturar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ProcesosAFacturar.Designer.cs">
       <DependentUpon>ProcesosAFacturar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MontoInicial.cs">
+      <DependentUpon>CajaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ppReporte_Result.cs">
+      <DependentUpon>CajaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="REPORTE.cs">
-      <DependentUpon>CajaOfflineModel.tt</DependentUpon>
+      <DependentUpon>CajaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="SEGURO.cs">
-      <DependentUpon>CajaOfflineModel.tt</DependentUpon>
+      <DependentUpon>CajaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="SERVICIOS.cs">
-      <DependentUpon>CajaOfflineModel.tt</DependentUpon>
+      <DependentUpon>CajaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
-    <EmbeddedResource Include="FacturacionOnline.resx">
+    <EmbeddedResource Include="Forms\Cuadre.resx">
+      <DependentUpon>Cuadre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FacturacionOnline.resx">
       <DependentUpon>FacturacionOnline.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProcesosAFacturar.resx">
+    <EmbeddedResource Include="Forms\FacturaImpresion.resx">
+      <DependentUpon>FacturaImpresion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\IFactura.rdlc" />
+    <EmbeddedResource Include="Forms\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MontoInicial.resx">
+      <DependentUpon>MontoInicial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProcesosAFacturar.resx">
       <DependentUpon>ProcesosAFacturar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -162,12 +222,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EntityDeploy Include="CajaOfflineModel.edmx">
+    <EntityDeploy Include="CajaModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>CajaOfflineModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>CajaModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="CajaOfflineModel.edmx.diagram">
-      <DependentUpon>CajaOfflineModel.edmx</DependentUpon>
+    <None Include="CajaModel.edmx.diagram">
+      <DependentUpon>CajaModel.edmx</DependentUpon>
     </None>
     <None Include="Connected Services\WSPrueba\hospital.Caja.WSPrueba.crearFacturaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -176,6 +236,17 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\WSPrueba\WSBD.wsdl" />
+    <None Include="Dataset.xsc">
+      <DependentUpon>Dataset.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Dataset.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Dataset.xss">
+      <DependentUpon>Dataset.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -227,23 +298,25 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="CajaOffline.mdf">
+    <Content Include="CajaBD.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="CajaOfflineModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>CajaOfflineModel.edmx</DependentUpon>
-      <LastGenOutput>CajaOfflineModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="CajaOfflineModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>CajaOfflineModel.edmx</DependentUpon>
-      <LastGenOutput>CajaOfflineModel.cs</LastGenOutput>
-    </Content>
-    <Content Include="CajaOffline_log.ldf">
+    <Content Include="CajaBD_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>CajaOffline.mdf</DependentUpon>
+      <DependentUpon>CajaBD.mdf</DependentUpon>
     </Content>
+    <Content Include="CajaModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CajaModel.edmx</DependentUpon>
+      <LastGenOutput>CajaModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="CajaModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CajaModel.edmx</DependentUpon>
+      <LastGenOutput>CajaModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Recursos\HOSPITAL INTECIANO.2 LOGO.png" />
+    <Content Include="Recursos\HOSPITEC LOGO, NOMBRE, SLOGAN.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -259,12 +332,4 @@
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
-    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
-  </Target>
-  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
 </Project>

@@ -17,13 +17,10 @@ namespace hospital.Caja
         public int Id_Factura { get; set; }
         public int Id_Cliente { get; set; }
         public int Id_Servicio { get; set; }
-        public string Codigo_Factura { get; set; }
+        public int Cod_Factura { get; set; }
         public Nullable<decimal> Monto { get; set; }
         public Nullable<decimal> Des_Seguro { get; set; }
         public Nullable<decimal> Pagado { get; set; }
-        public Nullable<decimal> Total_Facturado { get; set; }
-        public Nullable<decimal> Total_Seguro { get; set; }
-        public Nullable<decimal> Total_Balance { get; set; }
         public Nullable<System.DateTime> Fecha { get; set; }
         public Nullable<int> Id_Empleado { get; set; }
         public Nullable<decimal> Importe { get; set; }
