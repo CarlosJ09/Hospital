@@ -3,18 +3,16 @@
 namespace hospital.integracion.Controllers
 {
     [ApiController]
-    [Produces("Application/Json")]
-    [Route("api/[controller]")]
     public class CajaController : Controller
     {
-        [HttpGet("AllClients")]
-        public async Task<IActionResult> AllClients()
+        [HttpGet("Clientes")]
+        public IActionResult AllClients()
         {
             var response = "Clients";
             return Ok(response);
         }
 
-        [HttpGet("AllUsuarios")]
+        [HttpGet("Usuarios")]
         public async Task<IActionResult> AllUsuarios()
         {
             var response = "Usuarios";
