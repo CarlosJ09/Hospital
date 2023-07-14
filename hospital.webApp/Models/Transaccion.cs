@@ -16,16 +16,12 @@ namespace hospital.webApp.Models
     {
         public int IdFactura { get; set; }
         public string NombreCompletoCliente { get; set; }
-        public string NombreServicio { get; set; }
         public int CodigoFactura { get; set; }
-        public decimal Monto { get; set; }
-        public decimal DescuentoSeguro { get; set; }
-        public decimal TotalFacturado { get; set; }
-        public decimal TotalSeguro { get; set; }
-        public decimal TotalBalance { get; set; }
-        public System.DateTime Fecha { get; set; }
-        public string NombreCompletoEmpleado { get; set; }
-        public decimal Importe { get; set; }
+        public Nullable<decimal> TotalFacturado { get; set; }
+        public Nullable<decimal> TotalSeguro { get; set; }
+        public Nullable<decimal> TotalBalance { get; set; }
+        public Nullable<System.DateTime> Fecha { get; set; }
+        public Nullable<decimal> TotalImporte { get; set; }
         public Nullable<bool> TransaccionConfirmada { get; set; }
     }
 }

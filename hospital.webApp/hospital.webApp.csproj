@@ -175,7 +175,7 @@
     <Compile Include="Controllers\ClientesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\TransaccionsController.cs" />
+    <Compile Include="Controllers\Transaccions1Controller.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -335,11 +335,11 @@
     <Content Include="Views\Citas\Details.cshtml" />
     <Content Include="Views\Citas\Edit.cshtml" />
     <Content Include="Views\Citas\Index.cshtml" />
-    <Content Include="Views\Transaccions\Create.cshtml" />
-    <Content Include="Views\Transaccions\Delete.cshtml" />
-    <Content Include="Views\Transaccions\Details.cshtml" />
-    <Content Include="Views\Transaccions\Edit.cshtml" />
-    <Content Include="Views\Transaccions\Index.cshtml" />
+    <Content Include="Views\Transaccions1\Create.cshtml" />
+    <Content Include="Views\Transaccions1\Delete.cshtml" />
+    <Content Include="Views\Transaccions1\Details.cshtml" />
+    <Content Include="Views\Transaccions1\Edit.cshtml" />
+    <Content Include="Views\Transaccions1\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
