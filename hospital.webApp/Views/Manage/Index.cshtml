@@ -8,10 +8,9 @@
 
     <p class="text-success">@ViewBag.StatusMessage</p>
     <div>
-        <h4>Change your account settings</h4>
         <hr />
         <dl class="dl-horizontal">
-            <dt>Password:</dt>
+            <dt>Contraseña:</dt>
             <dd>
                 [
                 @if (Model.HasPassword)
@@ -34,7 +33,7 @@
             <dt>Transacciones:</dt>
             <dd>
                 [
-                @Html.ActionLink("Confirmar Transacciones", "Index", "Transaccions")
+                @Html.ActionLink("Confirmar Transacciones", "Index", "Transaccions1")
                 ]
             </dd>
 

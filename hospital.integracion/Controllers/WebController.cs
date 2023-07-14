@@ -98,7 +98,7 @@ namespace hospital.integracion.Controllers
             return Ok(cita);
         }
 
-        [HttpPost("CreateCliente")]
+        [HttpPost("CreateCita")]
         public ActionResult CreateCita(Cita cita)
         {
             if (ModelState.IsValid)
@@ -126,10 +126,68 @@ namespace hospital.integracion.Controllers
         public ActionResult DeleteCita(int id)
         {
             Cita cita = webAPIDbContext.Cita.Find(id);
-            webAPIDbContext.Cliente.Remove(cita);
+            webAPIDbContext.Cita.Remove(cita);
             webAPIDbContext.SaveChanges();
 
             return Ok(cita);
+        }
+
+        //-------------------------------------------------------Transacciones-------------------------------------------------------
+
+        [HttpGet("Transacciones")]
+        public ActionResult Transacciones()
+        {
+            var result = webAPIDbContext.Transaccion.ToList();
+            return Ok(result);
+        }
+
+        [HttpGet("Transaccion")]
+        public ActionResult Transaccion(int? id)
+        {
+            var transaccion = webAPIDbContext.Transaccion.Find(id);
+            if (id == null)
+            {
+                return BadRequest("Inserte un Id");
+            }
+            if (transaccion == null)
+            {
+                return NotFound();
+            }
+            return Ok(transaccion);
+        }
+
+        [HttpPost("CreateTransaccion")]
+        public ActionResult CreateTransaccion(Transaccion transaccion)
+        {
+            if (ModelState.IsValid)
+            {
+                webAPIDbContext.Transaccion.Add(transaccion);
+                webAPIDbContext.SaveChanges();
+            }
+
+            return Ok(transaccion);
+        }
+
+        [HttpPost("EditTransaccion")]
+        public ActionResult EditTransaccion(Transaccion transaccion)
+        {
+            if (ModelState.IsValid)
+            {
+                webAPIDbContext.Entry(transaccion).State = EntityState.Modified;
+                webAPIDbContext.SaveChanges();
+            }
+            return Ok(transaccion);
+        }
+
+
+        [HttpPost("DeleteTransaccion")]
+        public ActionResult DeleteTransaccion(int id)
+        {
+            Transaccion transaccion = webAPIDbContext.Transaccion.Find(id);
+            webAPIDbContext.Transaccion.Remove(transaccion);
+            webAPIDbContext.SaveChanges();
+
+            return Ok(transaccion);
         }
     }
 }

@@ -78,25 +78,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Transaccion">
-      <EntityTypeMapping TypeName="PacienteModel.Transaccion">
-        <MappingFragment StoreEntitySet="Transaccion">
-          <ScalarProperty Name="IdFactura" ColumnName="IdFactura" />
-          <ScalarProperty Name="NombreCompletoCliente" ColumnName="NombreCompletoCliente" />
-          <ScalarProperty Name="NombreServicio" ColumnName="NombreServicio" />
-          <ScalarProperty Name="CodigoFactura" ColumnName="CodigoFactura" />
-          <ScalarProperty Name="Monto" ColumnName="Monto" />
-          <ScalarProperty Name="DescuentoSeguro" ColumnName="DescuentoSeguro" />
-          <ScalarProperty Name="TotalFacturado" ColumnName="TotalFacturado" />
-          <ScalarProperty Name="TotalSeguro" ColumnName="TotalSeguro" />
-          <ScalarProperty Name="TotalBalance" ColumnName="TotalBalance" />
-          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
-          <ScalarProperty Name="NombreCompletoEmpleado" ColumnName="NombreCompletoEmpleado" />
-          <ScalarProperty Name="Importe" ColumnName="Importe" />
-          <ScalarProperty Name="TransaccionConfirmada" ColumnName="TransaccionConfirmada" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <AssociationSetMapping Name="AspNetUserRoles" TypeName="PacienteModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
       <EndProperty Name="AspNetRoles">
         <ScalarProperty Name="Id" ColumnName="RoleId" />
@@ -105,5 +86,20 @@
         <ScalarProperty Name="Id" ColumnName="UserId" />
       </EndProperty>
     </AssociationSetMapping>
+    <EntitySetMapping Name="Transaccion">
+      <EntityTypeMapping TypeName="PacienteModel.Transaccion">
+        <MappingFragment StoreEntitySet="Transaccion">
+          <ScalarProperty Name="TransaccionConfirmada" ColumnName="TransaccionConfirmada" />
+          <ScalarProperty Name="TotalImporte" ColumnName="TotalImporte" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="TotalBalance" ColumnName="TotalBalance" />
+          <ScalarProperty Name="TotalSeguro" ColumnName="TotalSeguro" />
+          <ScalarProperty Name="TotalFacturado" ColumnName="TotalFacturado" />
+          <ScalarProperty Name="CodigoFactura" ColumnName="CodigoFactura" />
+          <ScalarProperty Name="NombreCompletoCliente" ColumnName="NombreCompletoCliente" />
+          <ScalarProperty Name="IdFactura" ColumnName="IdFactura" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

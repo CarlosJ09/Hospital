@@ -79,7 +79,7 @@
     <Property Name="Cedula" Type="int" Nullable="false" />
     <Property Name="Telefono" Type="int" Nullable="false" />
     <Property Name="Poliza" Type="int" />
-    <Property Name="Email" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="256" />
   </EntityType>
   <EntityType Name="Transaccion">
     <Key>
@@ -87,16 +87,12 @@
     </Key>
     <Property Name="IdFactura" Type="int" Nullable="false" />
     <Property Name="NombreCompletoCliente" Type="nvarchar" MaxLength="200" Nullable="false" />
-    <Property Name="NombreServicio" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="CodigoFactura" Type="int" Nullable="false" />
-    <Property Name="Monto" Type="decimal" Precision="18" Scale="2" Nullable="false" />
-    <Property Name="DescuentoSeguro" Type="decimal" Precision="18" Scale="2" Nullable="false" />
-    <Property Name="TotalFacturado" Type="decimal" Precision="18" Scale="2" Nullable="false" />
-    <Property Name="TotalSeguro" Type="decimal" Precision="18" Scale="2" Nullable="false" />
-    <Property Name="TotalBalance" Type="decimal" Precision="18" Scale="2" Nullable="false" />
-    <Property Name="Fecha" Type="date" Nullable="false" />
-    <Property Name="NombreCompletoEmpleado" Type="nvarchar" MaxLength="200" Nullable="false" />
-    <Property Name="Importe" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="TotalFacturado" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="TotalSeguro" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="TotalBalance" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Fecha" Type="date" />
+    <Property Name="TotalImporte" Type="decimal" Precision="18" Scale="2" />
     <Property Name="TransaccionConfirmada" Type="bit" />
   </EntityType>
   <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">

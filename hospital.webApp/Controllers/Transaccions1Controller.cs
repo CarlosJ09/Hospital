@@ -10,17 +10,17 @@ using hospital.webApp.Models;
 
 namespace hospital.webApp.Controllers
 {
-    public class TransaccionsController : Controller
+    public class Transaccions1Controller : Controller
     {
         private PacientesEntities db = new PacientesEntities();
 
-        // GET: Transaccions
+        // GET: Transaccions1
         public ActionResult Index()
         {
             return View(db.Transaccion.ToList());
         }
 
-        // GET: Transaccions/Details/5
+        // GET: Transaccions1/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -35,18 +35,18 @@ namespace hospital.webApp.Controllers
             return View(transaccion);
         }
 
-        // GET: Transaccions/Create
+        // GET: Transaccions1/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Transaccions/Create
+        // POST: Transaccions1/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IdFactura,NombreCompletoCliente,NombreServicio,CodigoFactura,Monto,DescuentoSeguro,TotalFacturado,TotalSeguro,TotalBalance,Fecha,NombreCompletoEmpleado,Importe,TransaccionConfirmada")] Transaccion transaccion)
+        public ActionResult Create([Bind(Include = "IdFactura,NombreCompletoCliente,CodigoFactura,TotalFacturado,TotalSeguro,TotalBalance,Fecha, TotalImporte,TransaccionConfirmada")] Transaccion transaccion)
         {
             if (ModelState.IsValid)
             {
@@ -58,7 +58,7 @@ namespace hospital.webApp.Controllers
             return View(transaccion);
         }
 
-        // GET: Transaccions/Edit/5
+        // GET: Transaccions1/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -73,12 +73,12 @@ namespace hospital.webApp.Controllers
             return View(transaccion);
         }
 
-        // POST: Transaccions/Edit/5
+        // POST: Transaccions1/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "IdFactura,NombreCompletoCliente,NombreServicio,CodigoFactura,Monto,DescuentoSeguro,TotalFacturado,TotalSeguro,TotalBalance,Fecha,NombreCompletoEmpleado,Importe,TransaccionConfirmada")] Transaccion transaccion)
+        public ActionResult Edit([Bind(Include = "IdFactura,NombreCompletoCliente,CodigoFactura,TotalFacturado,TotalSeguro,TotalBalance,Fecha, TotalImporte,TransaccionConfirmada")] Transaccion transaccion)
         {
             if (ModelState.IsValid)
             {
@@ -89,7 +89,7 @@ namespace hospital.webApp.Controllers
             return View(transaccion);
         }
 
-        // GET: Transaccions/Delete/5
+        // GET: Transaccions1/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -104,7 +104,7 @@ namespace hospital.webApp.Controllers
             return View(transaccion);
         }
 
-        // POST: Transaccions/Delete/5
+        // POST: Transaccions1/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
