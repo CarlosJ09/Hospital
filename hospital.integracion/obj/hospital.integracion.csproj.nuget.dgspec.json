@@ -1,7 +1,6 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
     "C:\\Users\\carlo\\source\\repos\\Hospital\\hospital.integracion\\hospital.integracion.csproj": {}
   },
   "projects": {
@@ -13,19 +12,6 @@
         "projectPath": "C:\\Users\\carlo\\source\\repos\\Hospital\\hospital.integracion\\hospital.integracion.csproj",
         "packagesPath": "C:\\Users\\carlo\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\carlo\\source\\repos\\Hospital\\hospital.integracion\\obj\\",
-=======
-    "C:\\Users\\LeonelLora\\Desktop\\Tareas Adelantadas\\HospitalPrueba\\Hospital\\hospital.integracion\\hospital.integracion.csproj": {}
-  },
-  "projects": {
-    "C:\\Users\\LeonelLora\\Desktop\\Tareas Adelantadas\\HospitalPrueba\\Hospital\\hospital.integracion\\hospital.integracion.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\LeonelLora\\Desktop\\Tareas Adelantadas\\HospitalPrueba\\Hospital\\hospital.integracion\\hospital.integracion.csproj",
-        "projectName": "hospital.integracion",
-        "projectPath": "C:\\Users\\LeonelLora\\Desktop\\Tareas Adelantadas\\HospitalPrueba\\Hospital\\hospital.integracion\\hospital.integracion.csproj",
-        "packagesPath": "C:\\Users\\LeonelLora\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\LeonelLora\\Desktop\\Tareas Adelantadas\\HospitalPrueba\\Hospital\\hospital.integracion\\obj\\",
->>>>>>> 03d4776d3fce8fb89e2720f11f9dc091bd737813
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
