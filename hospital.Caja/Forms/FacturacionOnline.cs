@@ -18,16 +18,27 @@ using Microsoft.ReportingServices.Diagnostics.Internal;
 using Microsoft.Reporting.WinForms;
 using hospital.Caja.DatasetTableAdapters;
 using hospital.Caja.Forms;
+using Microsoft.ReportingServices.ReportProcessing.ReportObjectModel;
 
 namespace hospital.Caja
 {
 
     public partial class FacturacionOnline : Form
     {
-        public FacturacionOnline()
+        private string user;
+        private int idcliente;
+        public FacturacionOnline(string pUsuario, int IdCliente)
         {
             InitializeComponent();
             lblShow_Fecha.Text =  DateTime.Today.ToString("dd/MM/yyyy");
+            user = pUsuario;
+            CajaBDEntities caja = new CajaBDEntities();
+         
+
+
+            var empleado = caja.EMPLEADO.FirstOrDefault(em => em.Usuario == user);
+            lblShow_Empleado.Text = empleado.Nombre_Empleado;
+
 
         }
 
@@ -81,12 +92,16 @@ namespace hospital.Caja
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
             CajaBDEntities cajaBDofflineEntities = new CajaBDEntities();
             string connectionString = ConfigurationManager.ConnectionStrings["cs"].ConnectionString;
             SqlConnection sqlConnection = new SqlConnection(connectionString);
             SqlCommand cmFactura = null;
             SqlCommand cmReporte = new SqlCommand("ppInsertarReporte",sqlConnection);
+            SqlTransaction transaction = sqlConnection.BeginTransaction();
             cmReporte.CommandType = CommandType.StoredProcedure;
+            cmReporte.Transaction = transaction;
+            
 
            
 
@@ -126,33 +141,47 @@ namespace hospital.Caja
                 desseguro = Seguro;
                 pagado = monto - desseguro + Importe;
 
-                
-                
-
-
-                sqlConnection.Open();
-
 
                 cmFactura = new SqlCommand();
                 cmFactura.Connection = sqlConnection;
-
                 cmFactura.CommandText = "ppInsertarFactura";
-
-
-                cmFactura.Parameters.AddWithValue("@IdCliente",id_cliente);
-                cmFactura.Parameters.AddWithValue("@IdServicio",id_servicio);
-                cmFactura.Parameters.AddWithValue("@Monto",monto);
-                cmFactura.Parameters.AddWithValue("@DesSeguro",desseguro);
-                cmFactura.Parameters.AddWithValue("@Pagado",pagado);
-                cmFactura.Parameters.AddWithValue("@Fecha",DateTime.Today);
-                cmFactura.Parameters.AddWithValue("@IdEmpleado",id_empleado);
-                cmFactura.Parameters.AddWithValue("@Importe",Importe);
-                
-                cmFactura.Parameters.AddWithValue("@Cod_Factura", cod_factura);
-
-
                 cmFactura.CommandType = System.Data.CommandType.StoredProcedure;
-                cmFactura.ExecuteNonQuery();
+                cmFactura.Transaction = transaction;
+                sqlConnection.Open();
+
+                try
+                {
+                    cmFactura.Parameters.AddWithValue("@IdCliente", id_cliente);
+                    cmFactura.Parameters.AddWithValue("@IdServicio", id_servicio);
+                    cmFactura.Parameters.AddWithValue("@Monto", monto);
+                    cmFactura.Parameters.AddWithValue("@DesSeguro", desseguro);
+                    cmFactura.Parameters.AddWithValue("@Pagado", pagado);
+                    cmFactura.Parameters.AddWithValue("@Fecha", DateTime.Today);
+                    cmFactura.Parameters.AddWithValue("@IdEmpleado", id_empleado);
+                    cmFactura.Parameters.AddWithValue("@Importe", Importe);
+                    cmFactura.Parameters.AddWithValue("@Estado", 0);
+                    cmFactura.Parameters.AddWithValue("@Cod_Factura", cod_factura);
+
+
+                    
+                    cmFactura.ExecuteNonQuery();
+                    transaction.Commit();
+                    MessageBox.Show("Factura Registrada. Presione Imprimir");
+
+                }
+                catch(Exception er)
+                {
+                    MessageBox.Show("Ocurrio un error: " + er.Message);
+                    transaction.Rollback();
+                }
+
+                
+                
+
+                
+
+
+                
 
                 sqlConnection.Close();
 
@@ -163,16 +192,26 @@ namespace hospital.Caja
             }
             sqlConnection.Open ();
 
-            cmReporte.Parameters.AddWithValue("@Id_Cliente",id_cliente);
-            cmReporte.Parameters.AddWithValue("@Cod_Factura", cod_factura);
-            cmReporte.Parameters.AddWithValue("@Id_Empleado", id_empleado);
-            cmReporte.Parameters.AddWithValue("@Total_Facturado", TotalFacturado);
-            cmReporte.Parameters.AddWithValue("@Total_Seguro", TotalSeguro);
-            cmReporte.Parameters.AddWithValue("@Tota_Importe", TotalImporte);
-            cmReporte.Parameters.AddWithValue("@Fecha", DateTime.Today);
-            cmReporte.Parameters.AddWithValue("@Total_Balance", TotalPagar);
+            try
+            {
+                cmReporte.Parameters.AddWithValue("@Id_Cliente", id_cliente);
+                cmReporte.Parameters.AddWithValue("@Cod_Factura", cod_factura);
+                cmReporte.Parameters.AddWithValue("@Id_Empleado", id_empleado);
+                cmReporte.Parameters.AddWithValue("@Total_Facturado", TotalFacturado);
+                cmReporte.Parameters.AddWithValue("@Total_Seguro", TotalSeguro);
+                cmReporte.Parameters.AddWithValue("@Tota_Importe", TotalImporte);
+                cmReporte.Parameters.AddWithValue("@Fecha", DateTime.Today);
 
-            cmReporte.ExecuteNonQuery();
+                cmReporte.Parameters.AddWithValue("@Total_Balance", TotalPagar);
+
+                cmReporte.ExecuteNonQuery();
+                transaction.Commit();
+            }
+            catch(Exception er)
+            {
+                transaction.Rollback();
+            }
+            
 
             sqlConnection.Close();
 
@@ -185,19 +224,25 @@ namespace hospital.Caja
         private void btnBuscar_Click(object sender, EventArgs e)
         {
            
-            int Codigo = int.Parse(txtCodigo.Text);
-            CajaBDEntities cajaBDofflineEntities = new CajaBDEntities();
-            try
-            {
-                var servicio = cajaBDofflineEntities.SERVICIOS.FirstOrDefault(s => s.Id_Servicio == Codigo);
-                txtDescripcion.Text = servicio.Nombre_Servicio;
-                txtPrecio.Text = servicio.Precio.ToString();
+            int Codigo;
 
-            }
-            catch (Exception er)
+            if (string.IsNullOrWhiteSpace(txtCodigo.Text))
             {
-                MessageBox.Show(er.Message);
+                MessageBox.Show("Por favor, ingrese un valor en el campo.", "Campo vacío", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtCodigo.Focus(); // Opcional: poner el foco en el TextBox para que el usuario pueda ingresar el valor directamente
             }
+            else
+            {
+                Codigo = int.Parse(txtCodigo.Text);
+                CajaBDEntities cajaBDofflineEntities = new CajaBDEntities();
+                
+                    var servicio = cajaBDofflineEntities.SERVICIOS.FirstOrDefault(s => s.Id_Servicio == Codigo);
+                    txtDescripcion.Text = servicio.Nombre_Servicio;
+                    txtPrecio.Text = servicio.Precio.ToString();
+
+                
+            }
+           
             
             
         }
@@ -205,33 +250,63 @@ namespace hospital.Caja
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             CajaBDEntities cajaBDofflineEntities = new CajaBDEntities();
-           
-            var seguro = cajaBDofflineEntities.SEGURO.FirstOrDefault(s => s.Nombre_Seguro == lbl_ShowSeguro.Text);
-            float desSeguro = (float)seguro.Des_Porcentaje * float.Parse(txtPrecio.Text);
-            float importe = 0.05f * (float.Parse(txtPrecio.Text) - desSeguro);
-          
-            string[] fila = { txtCodigo.Text, txtDescripcion.Text, txtPrecio.Text, desSeguro.ToString(), importe.ToString() };
-            lvwFactura.Items.Add(new ListViewItem(fila));
-            calcularTotales();
+            if (string.IsNullOrWhiteSpace(txtCodigo.Text) )
+            {
+                MessageBox.Show("Por favor, ingrese codigo de servicio.", "Campo vacío", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
+            else if( string.IsNullOrWhiteSpace(txtPrecio.Text))
+            {
+                MessageBox.Show("No ha elegido un servicio.", "Servicio no elegido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
+            else
+            {
+                var seguro = cajaBDofflineEntities.SEGURO.FirstOrDefault(s => s.Nombre_Seguro == lbl_ShowSeguro.Text);
+                float desSeguro = (float)seguro.Des_Porcentaje * float.Parse(txtPrecio.Text);
+                float importe = 0.05f * (float.Parse(txtPrecio.Text) - desSeguro);
+
+                string[] fila = { txtCodigo.Text, txtDescripcion.Text, txtPrecio.Text, desSeguro.ToString(), importe.ToString() };
+                lvwFactura.Items.Add(new ListViewItem(fila));
+                calcularTotales();
+            }
+
+            
 
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            foreach (ListViewItem item in lvwFactura.Items)
+            bool bandera = true;
+            if (string.IsNullOrWhiteSpace(txtEliminar.Text))
             {
-                // Obtén el valor del campo "ID"
-                string Codigo = item.SubItems[0].Text; // Suponiendo que "ID" es la primera columna (índice 0)
+                MessageBox.Show("Por favor, ingrese codigo de servicio a eliminar.", "Campo vacío", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
-                // Verifica si el valor de "ID" coincide con el valor deseado
-                if (Codigo == txtEliminar.Text)
-                {
-                    // Elimina la fila
-                    lvwFactura.Items.Remove(item);
-                    break; // Opcional: si solo esperas una coincidencia, puedes salir del bucle después de eliminar la fila
-                }
             }
-            calcularTotales();
+            else
+            {
+                foreach (ListViewItem item in lvwFactura.Items)
+                {
+                    // Obtén el valor del campo "ID"
+                    string Codigo = item.SubItems[0].Text; // Suponiendo que "ID" es la primera columna (índice 0)
+                    
+                    if (Codigo == txtEliminar.Text)
+                    {
+                        // Elimina la fila
+                        lvwFactura.Items.Remove(item);
+
+                        break; // Opcional: si solo esperas una coincidencia, puedes salir del bucle después de eliminar la fila
+                    }
+                    // Verifica si el valor de "ID" coincide con el valor deseado
+                    bandera = false;
+                }
+                if(bandera == false)
+                {
+                    MessageBox.Show("Ese codigo no se encuentra en el tablero.", "Codigo no encontrado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                }
+                calcularTotales();
+            }
         }
 
         private void btnImprimir_Click(object sender, EventArgs e)
@@ -249,6 +324,77 @@ namespace hospital.Caja
             report.Value = FacturaAdapter;*/ 
 
           //  reportv
+        }
+
+        private void lblEliminar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblShow_Empleado_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblFacturado_Por_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lvwFactura_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblFacturacion_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCodigo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b') // Verifica si no es un dígito ni la tecla de retroceso (backspace)
+            {
+                e.Handled = true; // Cancela el evento para evitar que el carácter se muestre en el TextBox
+            }
+        }
+
+        private void txtEliminar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b') // Verifica si no es un dígito ni la tecla de retroceso (backspace)
+            {
+                e.Handled = true; // Cancela el evento para evitar que el carácter se muestre en el TextBox
+            }
+        }
+
+        private void txtCodigo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FacturacionOnline_Load(object sender, EventArgs e)
+        {
+            CajaBDEntities caja = new CajaBDEntities();
+
+            var cliente = caja.CLIENTE.FirstOrDefault(c => c.Id_Cliente == idcliente);
+            var seguro = caja.SEGURO.FirstOrDefault(c => c.Id_Seguro == cliente.Id_Seguro);
+
+            string poliza, Nombre, Telefono, Seguro;
+            poliza = cliente.Poliza;
+            Telefono = cliente.Telefono;
+            Nombre = cliente.Nombre_Cliente;
+            Seguro = seguro.Nombre_Seguro;
+
+            lblShow_Cliente.Text = Nombre;
+            lbl_ShowSeguro.Text = Seguro;
+            lblShow_Tel.Text = Telefono;
+            lblShow_Poliza.Text = poliza;
+
         }
     }
 }

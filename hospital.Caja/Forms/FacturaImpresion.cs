@@ -19,6 +19,7 @@ namespace hospital.Caja.Forms
 
         private void FacturaImpresion_Load(object sender, EventArgs e)
         {
+            this.reportViewer1.RefreshReport();
             CajaBDEntities cajaBD = new CajaBDEntities();
             var ultimafactura = cajaBD.FACTURA.OrderByDescending(f => f.Cod_Factura).FirstOrDefault();
             int cod_ultima_factura = ultimafactura.Cod_Factura;
@@ -26,6 +27,11 @@ namespace hospital.Caja.Forms
             this.fACTURATableAdapter.Fill(this.dataset.FACTURA,cod_ultima_factura);
 
             this.reportViewer1.RefreshReport();
+        }
+
+        private void reportViewer1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

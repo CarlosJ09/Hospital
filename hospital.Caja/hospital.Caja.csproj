@@ -56,6 +56,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="log4net, Version=2.0.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.15\lib\net45\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
     </Reference>
@@ -83,6 +86,7 @@
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -136,6 +140,12 @@
     </Compile>
     <Compile Include="Forms\Cuadre.Designer.cs">
       <DependentUpon>Cuadre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FacturacionOffline.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FacturacionOffline.Designer.cs">
+      <DependentUpon>FacturacionOffline.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FacturacionOnline.cs">
       <SubType>Form</SubType>
@@ -196,9 +206,11 @@
     <Compile Include="SERVICIOS.cs">
       <DependentUpon>CajaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="Forms\Cuadre.resx">
       <DependentUpon>Cuadre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FacturacionOffline.resx">
+      <DependentUpon>FacturacionOffline.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FacturacionOnline.resx">
       <DependentUpon>FacturacionOnline.cs</DependentUpon>
@@ -257,6 +269,7 @@
     <None Include="Dataset.xss">
       <DependentUpon>Dataset.xsd</DependentUpon>
     </None>
+    <None Include="log4net.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -325,21 +338,15 @@
       <DependentUpon>CajaModel.edmx</DependentUpon>
       <LastGenOutput>CajaModel.cs</LastGenOutput>
     </Content>
+    <Content Include="Recursos\Check.jpg" />
+    <Content Include="Recursos\eliminar.png" />
     <Content Include="Recursos\HOSPITAL INTECIANO.2 LOGO.png" />
     <Content Include="Recursos\HOSPITEC LOGO, NOMBRE, SLOGAN.png" />
-    <Content Include="SqlServerTypes\readme.htm" />
-    <Content Include="SqlServerTypes\x64\msvcr120.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x86\msvcr120.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Recursos\imprimir.png" />
+    <Content Include="Recursos\lupa.png" />
+    <Content Include="Recursos\masverde.png" />
+    <Content Include="Recursos\reloj.png" />
+    <Content Include="Recursos\x.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
