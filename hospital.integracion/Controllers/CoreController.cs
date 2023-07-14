@@ -1,13 +1,31 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using hospital.integracion.Data;
+using Microsoft.AspNetCore.Mvc;
 
 namespace hospital.integracion.Controllers
 {
-  
+    [ApiController]
+    [Route("api/[controller]")]
     public class CoreController : Controller
     {
-        public IActionResult Index()
+        private readonly CoreAPIDbContext coreAPIDbContext;
+
+        public CoreController(CoreAPIDbContext coreAPIDbContext)
         {
-            return View();
+            this.coreAPIDbContext = coreAPIDbContext;
+        }
+
+        [HttpGet("Inscritos")]
+        public IActionResult Inscritos()
+        {
+            var ingreso = coreAPIDbContext.Ingreso.ToList();
+            return Ok(ingreso);
+        }
+
+        [HttpGet("Inscrito")]
+        public IActionResult Inscrito(int? id)
+        {
+            var ingreso = coreAPIDbContext.Ingreso.Find(id);
+            return Ok(ingreso);
         }
     }
 }

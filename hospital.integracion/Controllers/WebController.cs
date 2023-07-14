@@ -3,7 +3,6 @@ using hospital.webApp.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Net;
-using static hospital.integracion.Data.CajaAPIDbContext;
 
 namespace hospital.integracion.Controllers
 {

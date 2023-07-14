@@ -27,6 +27,7 @@ namespace hospital.Caja
     {
         private string user;
         private int idcliente;
+
         public FacturacionOnline(string pUsuario, int IdCliente)
         {
             InitializeComponent();

@@ -9,7 +9,6 @@ namespace hospital.integracion.Controllers
     [Route("api/[controller]")]
     public class CajaController : Controller
     {
-
         private readonly CajaAPIDbContext cajaAPIDbContext;
 
         public CajaController(CajaAPIDbContext cajaAPIDbContext)
@@ -24,11 +23,19 @@ namespace hospital.integracion.Controllers
             return Ok(clientes);
         }
 
-        [HttpGet("Usuarios")]
-        public async Task<IActionResult> AllUsuarios()
+        [HttpGet("Cliente")]
+        public IActionResult Cliente(int? id)
         {
-            var response = "Usuarios";
-            return Ok(response);
+            var cliente = cajaAPIDbContext.CLIENTE.Find(id);
+            return Ok(cliente);
         }
+
+        [HttpGet("Reporte")]
+        public IActionResult Reporte()
+        {
+            var reporte = cajaAPIDbContext.REPORTE.ToList();
+            return Ok(reporte);
+        }
+
     }
 }

@@ -20,7 +20,7 @@ namespace hospital.integracion.Data
 
             modelBuilder.Entity<MontoInicial>().HasKey(x => x.Id);
 
-            modelBuilder.Entity<REPORTE>().HasKey(x => x.Id_Cliente);
+            modelBuilder.Entity<REPORTE>().HasKey(x => x.Id_Indice);
 
             modelBuilder.Entity<SEGURO>().HasKey(x => x.Id_Seguro);
 
@@ -35,8 +35,6 @@ namespace hospital.integracion.Data
         public virtual DbSet<FACTURA> FACTURA { get; set; }
 
         public virtual DbSet<MontoInicial> MontoInicial { get; set; }
-
-        public virtual DbSet<ppReporte_Result> ppReporte_Result { get; set; }
 
         public virtual DbSet<REPORTE> REPORTE { get; set; }
 

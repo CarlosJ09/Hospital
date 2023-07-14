@@ -4,6 +4,7 @@
     <TargetFramework>net7.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <Platforms>AnyCPU;x86</Platforms>
   </PropertyGroup>
 
   <ItemGroup>
@@ -16,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CapaEntidad_CORE_USER\CapaEntidad_CORE_USER.csproj" />
     <ProjectReference Include="..\hospital.Caja\hospital.Caja.csproj" />
     <ProjectReference Include="..\hospital.webApp\hospital.webApp.csproj" />
   </ItemGroup>

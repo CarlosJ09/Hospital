@@ -1213,6 +1213,15 @@
           }
         }
       },
+      "CapaEntidad_CORE_USER/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/CapaEntidad_CORE_USER.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CapaEntidad_CORE_USER.dll": {}
+        }
+      },
       "hospital.Caja/1.0.0": {
         "type": "project",
         "compile": {
@@ -3587,6 +3596,11 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "CapaEntidad_CORE_USER/1.0.0": {
+      "type": "project",
+      "path": "../CapaEntidad_CORE_USER/CapaEntidad_CORE_USER.csproj",
+      "msbuildProject": "../CapaEntidad_CORE_USER/CapaEntidad_CORE_USER.csproj"
+    },
     "hospital.Caja/1.0.0": {
       "type": "project",
       "path": "../hospital.Caja/hospital.Caja.csproj",
@@ -3600,6 +3614,7 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "CapaEntidad_CORE_USER >= 1.0.0",
       "EntityFramework >= 6.4.4",
       "Microsoft.AspNetCore.OpenApi >= 7.0.5",
       "Microsoft.Data.SqlClient >= 5.1.1",
@@ -3645,6 +3660,9 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
+            "C:\\Users\\carlo\\source\\repos\\Hospital\\CapaEntidad_CORE_USER\\CapaEntidad_CORE_USER.csproj": {
+              "projectPath": "C:\\Users\\carlo\\source\\repos\\Hospital\\CapaEntidad_CORE_USER\\CapaEntidad_CORE_USER.csproj"
+            },
             "C:\\Users\\carlo\\source\\repos\\Hospital\\hospital.Caja\\hospital.Caja.csproj": {
               "projectPath": "C:\\Users\\carlo\\source\\repos\\Hospital\\hospital.Caja\\hospital.Caja.csproj"
             },
