@@ -18,25 +18,26 @@ using Microsoft.ReportingServices.Diagnostics.Internal;
 using Microsoft.Reporting.WinForms;
 using hospital.Caja.DatasetTableAdapters;
 using hospital.Caja.Forms;
-<<<<<<< HEAD
 using log4net;
-=======
 using Microsoft.ReportingServices.ReportProcessing.ReportObjectModel;
->>>>>>> 5d354ff92e331237db608f63ef4768bf4b3c42c0
+
 
 namespace hospital.Caja
 {
 
     public partial class FacturacionOnline : Form
     {
-<<<<<<< HEAD
+
         private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         public FacturacionOnline()
-=======
+        { 
+
+        }
+        
         private string user;
         private int idcliente;
         public FacturacionOnline(string pUsuario, int IdCliente)
->>>>>>> 5d354ff92e331237db608f63ef4768bf4b3c42c0
+
         {
             InitializeComponent();
             lblShow_Fecha.Text =  DateTime.Today.ToString("dd/MM/yyyy");
