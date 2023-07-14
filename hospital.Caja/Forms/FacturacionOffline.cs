@@ -16,6 +16,8 @@ namespace hospital.Caja.Forms
     public partial class FacturacionOffline : Form
     {
         private string user;
+        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
         public FacturacionOffline(string pUsuario)
         {
             InitializeComponent();
@@ -168,11 +170,13 @@ namespace hospital.Caja.Forms
                 cmReporte.ExecuteNonQuery();
                 cmFactura.ExecuteNonQuery();
                 transaction.Commit();
+                log.Info("Factura Agregada");
             }
             catch(Exception er)
             {
                 MessageBox.Show(er.Message);
                 transaction.Rollback();
+                log.Error("Ocurrio un error: " + er.Message);
             }
             
             
@@ -395,17 +399,20 @@ namespace hospital.Caja.Forms
                     cmCliente.ExecuteNonQuery();
                     transaction.Commit();
                     MessageBox.Show("Cliente Agregado");
+                    log.Info("Cliente Agregado");
                     txtCedula.Enabled = !txtCedula.Enabled;
                     txtPoliza.Enabled = !txtPoliza.Enabled;
                     txtNombreCliente.Enabled = !txtNombreCliente.Enabled;
                     txtTelefono.Enabled = !txtTelefono.Enabled;
                     cbSeguro.Enabled = !cbSeguro.Enabled;
                     txtCodigo.Enabled = !txtCodigo.Enabled;
+
                 }
                 catch (Exception er)
                 {
                     transaction.Rollback();
                     MessageBox.Show(er.Message);
+                    log.Error("Ocurrio un error: " + er.Message);
                 }
 
                 sqlConnection.Close();

@@ -34,6 +34,7 @@ namespace hospital.Caja
         public virtual DbSet<REPORTE> REPORTE { get; set; }
         public virtual DbSet<MontoInicial> MontoInicial { get; set; }
         public virtual DbSet<FACTURA> FACTURA { get; set; }
+        public virtual DbSet<PROCESOS> PROCESOS { get; set; }
     
         public virtual int ppInsertarFactura(Nullable<int> idCliente, Nullable<int> idServicio, Nullable<decimal> monto, Nullable<decimal> desSeguro, Nullable<decimal> pagado, Nullable<System.DateTime> fecha, Nullable<int> idEmpleado, Nullable<decimal> importe, Nullable<int> estado, Nullable<int> cod_Factura)
         {
@@ -93,37 +94,29 @@ namespace hospital.Caja
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("ppLogin", usernameParameter, passwordParameter);
         }
     
-        public virtual int ppInsertarCliente(Nullable<int> id_Cliente, Nullable<int> cod_Factura, Nullable<int> id_Empleado, Nullable<decimal> total_Facturado, Nullable<decimal> total_Seguro, Nullable<decimal> tota_Importe, Nullable<decimal> total_Balance)
+        public virtual int ppInsertarCliente(string nombre_Cliente, string cedula_Cliente, Nullable<int> id_Seguro, string poliza, string telefono)
         {
-            var id_ClienteParameter = id_Cliente.HasValue ?
-                new ObjectParameter("Id_Cliente", id_Cliente) :
-                new ObjectParameter("Id_Cliente", typeof(int));
+            var nombre_ClienteParameter = nombre_Cliente != null ?
+                new ObjectParameter("Nombre_Cliente", nombre_Cliente) :
+                new ObjectParameter("Nombre_Cliente", typeof(string));
     
-            var cod_FacturaParameter = cod_Factura.HasValue ?
-                new ObjectParameter("Cod_Factura", cod_Factura) :
-                new ObjectParameter("Cod_Factura", typeof(int));
+            var cedula_ClienteParameter = cedula_Cliente != null ?
+                new ObjectParameter("Cedula_Cliente", cedula_Cliente) :
+                new ObjectParameter("Cedula_Cliente", typeof(string));
     
-            var id_EmpleadoParameter = id_Empleado.HasValue ?
-                new ObjectParameter("Id_Empleado", id_Empleado) :
-                new ObjectParameter("Id_Empleado", typeof(int));
+            var id_SeguroParameter = id_Seguro.HasValue ?
+                new ObjectParameter("Id_Seguro", id_Seguro) :
+                new ObjectParameter("Id_Seguro", typeof(int));
     
-            var total_FacturadoParameter = total_Facturado.HasValue ?
-                new ObjectParameter("Total_Facturado", total_Facturado) :
-                new ObjectParameter("Total_Facturado", typeof(decimal));
+            var polizaParameter = poliza != null ?
+                new ObjectParameter("Poliza", poliza) :
+                new ObjectParameter("Poliza", typeof(string));
     
-            var total_SeguroParameter = total_Seguro.HasValue ?
-                new ObjectParameter("Total_Seguro", total_Seguro) :
-                new ObjectParameter("Total_Seguro", typeof(decimal));
+            var telefonoParameter = telefono != null ?
+                new ObjectParameter("Telefono", telefono) :
+                new ObjectParameter("Telefono", typeof(string));
     
-            var tota_ImporteParameter = tota_Importe.HasValue ?
-                new ObjectParameter("Tota_Importe", tota_Importe) :
-                new ObjectParameter("Tota_Importe", typeof(decimal));
-    
-            var total_BalanceParameter = total_Balance.HasValue ?
-                new ObjectParameter("Total_Balance", total_Balance) :
-                new ObjectParameter("Total_Balance", typeof(decimal));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ppInsertarCliente", id_ClienteParameter, cod_FacturaParameter, id_EmpleadoParameter, total_FacturadoParameter, total_SeguroParameter, tota_ImporteParameter, total_BalanceParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ppInsertarCliente", nombre_ClienteParameter, cedula_ClienteParameter, id_SeguroParameter, polizaParameter, telefonoParameter);
         }
     
         public virtual int ppInsertarReporte(Nullable<int> id_Cliente, Nullable<int> cod_Factura, Nullable<int> id_Empleado, Nullable<decimal> total_Facturado, Nullable<decimal> total_Seguro, Nullable<decimal> tota_Importe, Nullable<decimal> total_Balance, Nullable<System.DateTime> fecha)
@@ -187,6 +180,19 @@ namespace hospital.Caja
                 new ObjectParameter("Fecha", typeof(System.DateTime));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ppInsertarMontoInicial", montoParameter, fechaParameter);
+        }
+    
+        public virtual int ppInsertarProceso(Nullable<int> id_Cliente, string descripcion)
+        {
+            var id_ClienteParameter = id_Cliente.HasValue ?
+                new ObjectParameter("Id_Cliente", id_Cliente) :
+                new ObjectParameter("Id_Cliente", typeof(int));
+    
+            var descripcionParameter = descripcion != null ?
+                new ObjectParameter("Descripcion", descripcion) :
+                new ObjectParameter("Descripcion", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ppInsertarProceso", id_ClienteParameter, descripcionParameter);
         }
     }
 }

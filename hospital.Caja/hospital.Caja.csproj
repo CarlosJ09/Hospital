@@ -195,6 +195,9 @@
     <Compile Include="ppReporte_Result.cs">
       <DependentUpon>CajaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="PROCESOS.cs">
+      <DependentUpon>CajaModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="REPORTE.cs">
@@ -342,8 +345,10 @@
     </Content>
     <Content Include="Recursos\Check.jpg" />
     <Content Include="Recursos\eliminar.png" />
+    <Content Include="Recursos\facturar.jpg" />
     <Content Include="Recursos\HOSPITAL INTECIANO.2 LOGO.png" />
     <Content Include="Recursos\HOSPITEC LOGO, NOMBRE, SLOGAN.png" />
+    <Content Include="Recursos\Hospitecslogan.png" />
     <Content Include="Recursos\imprimir.png" />
     <Content Include="Recursos\lupa.png" />
     <Content Include="Recursos\masverde.png" />

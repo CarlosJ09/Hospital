@@ -48,7 +48,7 @@ namespace hospital.Caja.Forms
 
         private void btnOpenProcesos_Click(object sender, EventArgs e)
         {
-            ProcesosAFacturar p = new ProcesosAFacturar();
+            ProcesosAFacturar p = new ProcesosAFacturar(user);
             p.ShowDialog();
         }
 
