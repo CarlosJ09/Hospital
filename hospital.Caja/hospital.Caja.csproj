@@ -273,7 +273,6 @@
     <None Include="Dataset.xss">
       <DependentUpon>Dataset.xsd</DependentUpon>
     </None>
-    <None Include="log4net.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

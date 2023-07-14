@@ -279,26 +279,26 @@ namespace hospital.Caja
                 string[] fila = { txtCodigo.Text, txtDescripcion.Text, txtPrecio.Text, desSeguro.ToString(), importe.ToString() };
                 lvwFactura.Items.Add(new ListViewItem(fila));
                 calcularTotales();
+
+                try
+                {
+                    // Agregar la factura a la base de datos o realizar cualquier operación necesaria
+                    lvwFactura.Items.Add(new ListViewItem(fila));
+
+                    // Calcular los totales
+                    calcularTotales();
+
+                    // Registro de éxito
+                    log.Info("Factura agregada correctamente.");
+                }
+                catch (Exception ex)
+                {
+                    // Registro de error
+                    log.Error("Error al agregar la factura: " + ex.Message);
+                }
             }
 
-            
-
-            try
-            {
-                // Agregar la factura a la base de datos o realizar cualquier operación necesaria
-                lvwFactura.Items.Add(new ListViewItem(fila));
-
-                // Calcular los totales
-                calcularTotales();
-
-                // Registro de éxito
-                log.Info("Factura agregada correctamente.");
-            }
-            catch (Exception ex)
-            {
-                // Registro de error
-                log.Error("Error al agregar la factura: " + ex.Message);
-            }
+           
 
         }
 

@@ -38,6 +38,7 @@
     <Property Name="Fecha" Type="date" />
     <Property Name="Id_Empleado" Type="int" />
     <Property Name="Importe" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Estado" Type="bit" Nullable="false" />
   </EntityType>
   <EntityType Name="MontoInicial">
     <Key>
@@ -97,6 +98,7 @@
     <Parameter Name="Fecha" Type="date" Mode="In" />
     <Parameter Name="IdEmpleado" Type="int" Mode="In" />
     <Parameter Name="Importe" Type="decimal" Mode="In" />
+    <Parameter Name="Estado" Type="int" Mode="In" />
     <Parameter Name="Cod_Factura" Type="int" Mode="In" />
   </Function>
   <Function Name="ppInsertarMontoInicial" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">

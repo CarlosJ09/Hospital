@@ -9,3 +9,7 @@ INFO  2023-07-13 18:17:12,435 36766ms Login                  btnLogin_Click     
 INFO  2023-07-13 18:17:16,298 40629ms Login                  btnLogin_Click     - Inicio de sesion exitoso para el usuario: Admin
 INFO  2023-07-13 18:19:06,963    78ms Program                Main               - Iniciando el programa
 INFO  2023-07-13 18:19:18,841 11956ms Login                  btnLogin_Click     - Inicio de sesion exitoso para el usuario: admin
+INFO  2023-07-14 12:50:25,556   129ms Program                Main               - Iniciando el programa
+INFO  2023-07-14 12:50:39,202 13775ms Login                  btnLogin_Click     - Inicio de sesion exitoso para el usuario: admin
+INFO  2023-07-14 12:52:33,789    70ms Program                Main               - Iniciando el programa
+INFO  2023-07-14 12:52:41,568  7849ms Login                  btnLogin_Click     - Inicio de sesion exitoso para el usuario: admin

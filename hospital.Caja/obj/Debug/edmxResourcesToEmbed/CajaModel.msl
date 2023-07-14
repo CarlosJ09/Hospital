@@ -44,22 +44,6 @@
     </EntitySetMapping>
     <FunctionImportMapping FunctionImportName="ppInsertarFactura" FunctionName="CajaBDModel.Store.ppInsertarFactura" />
     <FunctionImportMapping FunctionImportName="ppLogin" FunctionName="CajaBDModel.Store.ppLogin" />
-    <EntitySetMapping Name="FACTURA">
-      <EntityTypeMapping TypeName="CajaBDModel.FACTURA">
-        <MappingFragment StoreEntitySet="FACTURA">
-          <ScalarProperty Name="Importe" ColumnName="Importe" />
-          <ScalarProperty Name="Id_Empleado" ColumnName="Id_Empleado" />
-          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
-          <ScalarProperty Name="Pagado" ColumnName="Pagado" />
-          <ScalarProperty Name="Des_Seguro" ColumnName="Des_Seguro" />
-          <ScalarProperty Name="Monto" ColumnName="Monto" />
-          <ScalarProperty Name="Cod_Factura" ColumnName="Cod_Factura" />
-          <ScalarProperty Name="Id_Servicio" ColumnName="Id_Servicio" />
-          <ScalarProperty Name="Id_Cliente" ColumnName="Id_Cliente" />
-          <ScalarProperty Name="Id_Factura" ColumnName="Id_Factura" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <FunctionImportMapping FunctionImportName="ppInsertarCliente" FunctionName="CajaBDModel.Store.ppInsertarCliente" />
     <FunctionImportMapping FunctionImportName="ppInsertarReporte" FunctionName="CajaBDModel.Store.ppInsertarReporte" />
     <EntitySetMapping Name="REPORTE">
@@ -87,5 +71,22 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <FunctionImportMapping FunctionImportName="ppInsertarMontoInicial" FunctionName="CajaBDModel.Store.ppInsertarMontoInicial" />
+    <EntitySetMapping Name="FACTURA">
+      <EntityTypeMapping TypeName="CajaBDModel.FACTURA">
+        <MappingFragment StoreEntitySet="FACTURA">
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Importe" ColumnName="Importe" />
+          <ScalarProperty Name="Id_Empleado" ColumnName="Id_Empleado" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Pagado" ColumnName="Pagado" />
+          <ScalarProperty Name="Des_Seguro" ColumnName="Des_Seguro" />
+          <ScalarProperty Name="Monto" ColumnName="Monto" />
+          <ScalarProperty Name="Cod_Factura" ColumnName="Cod_Factura" />
+          <ScalarProperty Name="Id_Servicio" ColumnName="Id_Servicio" />
+          <ScalarProperty Name="Id_Cliente" ColumnName="Id_Cliente" />
+          <ScalarProperty Name="Id_Factura" ColumnName="Id_Factura" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>
