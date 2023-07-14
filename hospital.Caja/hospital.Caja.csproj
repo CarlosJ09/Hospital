@@ -12,6 +12,23 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,8 +50,43 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.15\lib\net45\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,25 +98,142 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FacturacionOnline.cs">
+    <Compile Include="CajaModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CajaModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CajaModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CajaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CajaModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CajaModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="CLIENTE.cs">
+      <DependentUpon>CajaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\WSPrueba\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset.cs">
+      <DependentUpon>Dataset.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dataset.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="EMPLEADO.cs">
+      <DependentUpon>CajaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FACTURA.cs">
+      <DependentUpon>CajaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Cuadre.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FacturacionOnline.Designer.cs">
+    <Compile Include="Forms\Cuadre.Designer.cs">
+      <DependentUpon>Cuadre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FacturacionOffline.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FacturacionOffline.Designer.cs">
+      <DependentUpon>FacturacionOffline.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FacturacionOnline.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FacturacionOnline.Designer.cs">
       <DependentUpon>FacturacionOnline.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProcesosAFacturar.cs">
+    <Compile Include="Forms\FacturaImpresion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProcesosAFacturar.Designer.cs">
+    <Compile Include="Forms\FacturaImpresion.Designer.cs">
+      <DependentUpon>FacturaImpresion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MontoInicial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MontoInicial.Designer.cs">
+      <DependentUpon>MontoInicial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ProcesosAFacturar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ProcesosAFacturar.Designer.cs">
       <DependentUpon>ProcesosAFacturar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Reportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Reportes.Designer.cs">
+      <DependentUpon>Reportes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MontoInicial.cs">
+      <DependentUpon>CajaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ppReporte_Result.cs">
+      <DependentUpon>CajaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FacturacionOnline.resx">
+    <Compile Include="REPORTE.cs">
+      <DependentUpon>CajaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SEGURO.cs">
+      <DependentUpon>CajaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SERVICIOS.cs">
+      <DependentUpon>CajaModel.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Forms\Cuadre.resx">
+      <DependentUpon>Cuadre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FacturacionOffline.resx">
+      <DependentUpon>FacturacionOffline.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FacturacionOnline.resx">
       <DependentUpon>FacturacionOnline.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProcesosAFacturar.resx">
+    <EmbeddedResource Include="Forms\FacturaImpresion.resx">
+      <DependentUpon>FacturaImpresion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\IFactura.rdlc" />
+    <EmbeddedResource Include="Forms\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MontoInicial.resx">
+      <DependentUpon>MontoInicial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProcesosAFacturar.resx">
       <DependentUpon>ProcesosAFacturar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ReporteFactura.rdlc" />
+    <EmbeddedResource Include="Forms\Reportes.resx">
+      <DependentUpon>Reportes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -75,6 +244,35 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EntityDeploy Include="CajaModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CajaModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="CajaModel.edmx.diagram">
+      <DependentUpon>CajaModel.edmx</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSPrueba\hospital.Caja.WSPrueba.crearFacturaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSPrueba\hospital.Caja.WSPrueba.HelloWorldResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSPrueba\WSBD.wsdl" />
+    <None Include="Dataset.xsc">
+      <DependentUpon>Dataset.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Dataset.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Dataset.xss">
+      <DependentUpon>Dataset.xsd</DependentUpon>
+    </None>
+    <None Include="log4net.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -87,6 +285,70 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\WSPrueba\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WSPrueba\WSBD.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WSPrueba\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WSPrueba\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WSPrueba\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CajaBD.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CajaBD_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>CajaBD.mdf</DependentUpon>
+    </Content>
+    <Content Include="CajaModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CajaModel.edmx</DependentUpon>
+      <LastGenOutput>CajaModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="CajaModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CajaModel.edmx</DependentUpon>
+      <LastGenOutput>CajaModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Recursos\Check.jpg" />
+    <Content Include="Recursos\eliminar.png" />
+    <Content Include="Recursos\HOSPITAL INTECIANO.2 LOGO.png" />
+    <Content Include="Recursos\HOSPITEC LOGO, NOMBRE, SLOGAN.png" />
+    <Content Include="Recursos\imprimir.png" />
+    <Content Include="Recursos\lupa.png" />
+    <Content Include="Recursos\masverde.png" />
+    <Content Include="Recursos\reloj.png" />
+    <Content Include="Recursos\x.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

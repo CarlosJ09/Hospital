@@ -1,5 +1,6 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "vIjy08OlSVBpK1dJG6Lob7g66I4Y3Jr8JDrjqLBIgKtFmsAue6DuljgCIxQDm6sf7e8DNmYUHTUYN+nxtWYbNQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\carlo\\source\\repos\\Hospital\\hospital.integracion\\hospital.integracion.csproj",
@@ -75,5 +76,11 @@
     "C:\\Users\\carlo\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\carlo\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512"
   ],
+=======
+  "dgSpecHash": "h+0B4KRiua271sOlKeStvLAHuX2PSOUOt9aIdPVvRtGl9Og7cBPBcZq7JgTZDbJxL2gpFbLgTRPZZoLIjFZ1Lg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\LeonelLora\\Desktop\\Tareas Adelantadas\\HospitalPrueba\\Hospital\\hospital.integracion\\hospital.integracion.csproj",
+  "expectedPackageFiles": [],
+>>>>>>> 03d4776d3fce8fb89e2720f11f9dc091bd737813
   "logs": []
 }
