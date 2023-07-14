@@ -63,8 +63,9 @@ namespace hospital.Caja.Forms
             CajaBDEntities cajaBDofflineEntities = new CajaBDEntities();
             string connectionString = ConfigurationManager.ConnectionStrings["cs"].ConnectionString;
             SqlConnection sqlConnection = new SqlConnection(connectionString);
+            sqlConnection.Open();
             SqlTransaction transaction = sqlConnection.BeginTransaction();
-            SqlCommand cmFactura = null;
+           SqlCommand cmFactura = new SqlCommand("ppInsertarFactura", sqlConnection, transaction);
             SqlCommand cmReporte = new SqlCommand("ppInsertarReporte", sqlConnection,transaction);
             
             
@@ -101,87 +102,79 @@ namespace hospital.Caja.Forms
             TotalSeguro = decimal.Parse(lblShow_Total_Seguro.Text);
             TotalPagar = decimal.Parse(lblShow_Balance_a_pagar.Text);
             TotalImporte = decimal.Parse(lblShow_Total_Importe.Text);
-
-            foreach (ListViewItem item in lvwFactura.Items)
+            try
             {
+                foreach (ListViewItem item in lvwFactura.Items)
+                {
 
-                int Codigo_Servicio = int.Parse(item.SubItems[0].Text); // Suponiendo que "ID" es la primera columna (índice 0)
-                decimal Precio = decimal.Parse(item.SubItems[2].Text);
-                decimal Seguro = decimal.Parse(item.SubItems[3].Text);
-                decimal Importe = decimal.Parse(item.SubItems[4].Text);
+                    int Codigo_Servicio = int.Parse(item.SubItems[0].Text); // Suponiendo que "ID" es la primera columna (índice 0)
+                    decimal Precio = decimal.Parse(item.SubItems[2].Text);
+                    decimal Seguro = decimal.Parse(item.SubItems[3].Text);
+                    decimal Importe = decimal.Parse(item.SubItems[4].Text);
 
-                id_servicio = Codigo_Servicio;
-                monto = Precio;
-                desseguro = Seguro;
-                pagado = monto - desseguro + Importe;
-
-
-
-
-
-                sqlConnection.Open();
+                    id_servicio = Codigo_Servicio;
+                    monto = Precio;
+                    desseguro = Seguro;
+                    pagado = monto - desseguro + Importe;
 
 
-                cmFactura = new SqlCommand();
-                cmFactura.Connection = sqlConnection;
-                cmFactura.CommandType = System.Data.CommandType.StoredProcedure;
-                cmFactura.CommandText = "ppInsertarFactura";
-                cmFactura.Transaction = transaction;
+                    cmFactura.CommandType = System.Data.CommandType.StoredProcedure;
+
+
+                    try
+                    {
+                        cmFactura.Parameters.AddWithValue("@IdCliente", id_cliente);
+                        cmFactura.Parameters.AddWithValue("@IdServicio", id_servicio);
+                        cmFactura.Parameters.AddWithValue("@Monto", monto);
+                        cmFactura.Parameters.AddWithValue("@DesSeguro", desseguro);
+                        cmFactura.Parameters.AddWithValue("@Pagado", pagado);
+                        cmFactura.Parameters.AddWithValue("@Fecha", DateTime.Today);
+                        cmFactura.Parameters.AddWithValue("@IdEmpleado", id_empleado);
+                        cmFactura.Parameters.AddWithValue("@Importe", Importe);
+                        cmFactura.Parameters.AddWithValue("@Estado", 0);
+                        cmFactura.Parameters.AddWithValue("@Cod_Factura", cod_factura);
+                        
+
+                    }
+                    catch (Exception er)
+                    {
+                        MessageBox.Show(er.Message);
+
+                    }
+
+
+                }
 
                 try
                 {
-                    cmFactura.Parameters.AddWithValue("@IdCliente", id_cliente);
-                    cmFactura.Parameters.AddWithValue("@IdServicio", id_servicio);
-                    cmFactura.Parameters.AddWithValue("@Monto", monto);
-                    cmFactura.Parameters.AddWithValue("@DesSeguro", desseguro);
-                    cmFactura.Parameters.AddWithValue("@Pagado", pagado);
-                    cmFactura.Parameters.AddWithValue("@Fecha", DateTime.Today);
-                    cmFactura.Parameters.AddWithValue("@IdEmpleado", id_empleado);
-                    cmFactura.Parameters.AddWithValue("@Importe", Importe);
-                    cmFactura.Parameters.AddWithValue("@Estado", 0);
-                    cmFactura.Parameters.AddWithValue("@Cod_Factura", cod_factura);
-                    cmFactura.ExecuteNonQuery();
-                    transaction.Commit();
+                    cmReporte.Parameters.AddWithValue("@Id_Cliente", id_cliente);
+                    cmReporte.Parameters.AddWithValue("@Cod_Factura", cod_factura);
+                    cmReporte.Parameters.AddWithValue("@Id_Empleado", id_empleado);
+                    cmReporte.Parameters.AddWithValue("@Total_Facturado", TotalFacturado);
+                    cmReporte.Parameters.AddWithValue("@Total_Seguro", TotalSeguro);
+                    cmReporte.Parameters.AddWithValue("@Tota_Importe", TotalImporte);
+                    cmReporte.Parameters.AddWithValue("@Fecha", DateTime.Today);
+
+                    cmReporte.Parameters.AddWithValue("@Total_Balance", TotalPagar);
+
+                    
+
                 }
                 catch (Exception er)
                 {
                     MessageBox.Show(er.Message);
-                    transaction.Rollback();
+
                 }
-                
-
-
-               
-                
-
-                sqlConnection.Close();
-
-
-
-
-
-            }
-            sqlConnection.Open();
-
-            try
-            {
-                cmReporte.Parameters.AddWithValue("@Id_Cliente", id_cliente);
-                cmReporte.Parameters.AddWithValue("@Cod_Factura", cod_factura);
-                cmReporte.Parameters.AddWithValue("@Id_Empleado", id_empleado);
-                cmReporte.Parameters.AddWithValue("@Total_Facturado", TotalFacturado);
-                cmReporte.Parameters.AddWithValue("@Total_Seguro", TotalSeguro);
-                cmReporte.Parameters.AddWithValue("@Tota_Importe", TotalImporte);
-                cmReporte.Parameters.AddWithValue("@Fecha", DateTime.Today);
-
-                cmReporte.Parameters.AddWithValue("@Total_Balance", TotalPagar);
-
                 cmReporte.ExecuteNonQuery();
+                cmFactura.ExecuteNonQuery();
                 transaction.Commit();
-            }catch (Exception er)
+            }
+            catch(Exception er)
             {
                 MessageBox.Show(er.Message);
                 transaction.Rollback();
             }
+            
             
 
             sqlConnection.Close();
