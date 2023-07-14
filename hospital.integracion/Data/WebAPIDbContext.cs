@@ -8,7 +8,7 @@ namespace hospital.integracion.Data
 {
     public class WebAPIDbContext : DbContext
     {
-        public WebAPIDbContext(DbContextOptions options) : base(options)
+        public WebAPIDbContext(DbContextOptions<WebAPIDbContext> options) : base(options)
         {
         }
 

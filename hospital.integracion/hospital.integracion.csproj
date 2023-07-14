@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\hospital.Caja\hospital.Caja.csproj" />
     <ProjectReference Include="..\hospital.webApp\hospital.webApp.csproj" />
   </ItemGroup>
 

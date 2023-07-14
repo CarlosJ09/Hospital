@@ -189,6 +189,14 @@
     <Compile Include="Forms\Reportes.Designer.cs">
       <DependentUpon>Reportes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\CLIENTE.cs" />
+    <Compile Include="Models\EMPLEADO.cs" />
+    <Compile Include="Models\FACTURA.cs" />
+    <Compile Include="Models\MontoInicial.cs" />
+    <Compile Include="Models\ppReporte_Result.cs" />
+    <Compile Include="Models\REPORTE.cs" />
+    <Compile Include="Models\SEGURO.cs" />
+    <Compile Include="Models\SERVICIOS.cs" />
     <Compile Include="MontoInicial.cs">
       <DependentUpon>CajaModel.tt</DependentUpon>
     </Compile>

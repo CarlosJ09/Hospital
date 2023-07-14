@@ -17,11 +17,10 @@ namespace hospital.integracion.Controllers
             this.cajaAPIDbContext = cajaAPIDbContext;
         }
 
-
         [HttpGet("Clientes")]
-        public async Task<IActionResult> AllClientsAsync()
+        public IActionResult Clientes()
         {
-            var clientes = await cajaAPIDbContext.CLIENTE.ToListAsync();
+            var clientes = cajaAPIDbContext.CLIENTE.ToList();
             return Ok(clientes);
         }
 
