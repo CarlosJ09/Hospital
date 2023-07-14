@@ -24,5 +24,6 @@ namespace hospital.Caja
         public Nullable<System.DateTime> Fecha { get; set; }
         public Nullable<int> Id_Empleado { get; set; }
         public Nullable<decimal> Importe { get; set; }
+        public bool Estado { get; set; }
     }
 }

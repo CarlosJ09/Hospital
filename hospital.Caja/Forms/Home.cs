@@ -12,9 +12,17 @@ namespace hospital.Caja.Forms
 {
     public partial class Home : Form
     {
-        public Home()
+        private string user;
+        public Home(string usuario)
         {
             InitializeComponent();
+            user = usuario;
+            CajaBDEntities caja = new CajaBDEntities();
+
+
+
+            var empleado = caja.EMPLEADO.FirstOrDefault(em => em.Usuario == user);
+            label1.Text = "Bienvenido "+empleado.Nombre_Empleado;
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
@@ -34,7 +42,7 @@ namespace hospital.Caja.Forms
 
         private void btnOpenFacturar_Click(object sender, EventArgs e)
         {
-            FacturacionOnline f = new FacturacionOnline();
+            FacturacionOffline f = new FacturacionOffline(user);
             f.ShowDialog();
         }
 
@@ -61,6 +69,11 @@ namespace hospital.Caja.Forms
         {
             Reportes r = new Reportes();
             r.ShowDialog();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

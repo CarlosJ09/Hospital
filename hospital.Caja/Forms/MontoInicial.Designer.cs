@@ -51,6 +51,7 @@
             this.txtMontoInicial.Name = "txtMontoInicial";
             this.txtMontoInicial.Size = new System.Drawing.Size(100, 28);
             this.txtMontoInicial.TabIndex = 1;
+            this.txtMontoInicial.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMontoInicial_KeyPress);
             // 
             // label2
             // 
@@ -70,6 +71,7 @@
             this.btnGuardarMonto.TabIndex = 3;
             this.btnGuardarMonto.Text = "button1";
             this.btnGuardarMonto.UseVisualStyleBackColor = true;
+            this.btnGuardarMonto.Click += new System.EventHandler(this.btnGuardarMonto_Click);
             // 
             // MontoInicial
             // 

@@ -34,14 +34,16 @@
             this.fACTURABindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataset = new hospital.Caja.Dataset();
             this.fACTURATableAdapter = new hospital.Caja.DatasetTableAdapters.FACTURATableAdapter();
+            this.fACTURABindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.fACTURABindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataset)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fACTURABindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // reportViewer1
             // 
             reportDataSource1.Name = "DataSetFactura";
-            reportDataSource1.Value = this.fACTURABindingSource;
+            reportDataSource1.Value = this.fACTURABindingSource1;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "hospital.Caja.Forms.IFactura.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(5, 12);
@@ -49,6 +51,7 @@
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(791, 426);
             this.reportViewer1.TabIndex = 0;
+            this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
             // 
             // fACTURABindingSource
             // 
@@ -64,6 +67,11 @@
             // 
             this.fACTURATableAdapter.ClearBeforeFill = true;
             // 
+            // fACTURABindingSource1
+            // 
+            this.fACTURABindingSource1.DataMember = "FACTURA";
+            this.fACTURABindingSource1.DataSource = this.dataset;
+            // 
             // FacturaImpresion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -75,6 +83,7 @@
             this.Load += new System.EventHandler(this.FacturaImpresion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.fACTURABindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataset)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fACTURABindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -85,5 +94,6 @@
         private Dataset dataset;
         private System.Windows.Forms.BindingSource fACTURABindingSource;
         private DatasetTableAdapters.FACTURATableAdapter fACTURATableAdapter;
+        private System.Windows.Forms.BindingSource fACTURABindingSource1;
     }
 }

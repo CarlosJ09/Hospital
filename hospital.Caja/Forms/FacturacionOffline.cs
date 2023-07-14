@@ -1,63 +1,43 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
-using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using hospital.Caja.WSPrueba;
-using System.Data.SqlClient;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using System.Configuration;
-using static hospital.Caja.Dataset;
-using Microsoft.ReportingServices.Diagnostics.Internal;
-using Microsoft.Reporting.WinForms;
-using hospital.Caja.DatasetTableAdapters;
-using hospital.Caja.Forms;
-<<<<<<< HEAD
-using log4net;
-=======
-using Microsoft.ReportingServices.ReportProcessing.ReportObjectModel;
->>>>>>> 5d354ff92e331237db608f63ef4768bf4b3c42c0
 
-namespace hospital.Caja
+namespace hospital.Caja.Forms
 {
-
-    public partial class FacturacionOnline : Form
+    public partial class FacturacionOffline : Form
     {
-<<<<<<< HEAD
-        private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-        public FacturacionOnline()
-=======
         private string user;
-        private int idcliente;
-        public FacturacionOnline(string pUsuario, int IdCliente)
->>>>>>> 5d354ff92e331237db608f63ef4768bf4b3c42c0
+        public FacturacionOffline(string pUsuario)
         {
             InitializeComponent();
-            lblShow_Fecha.Text =  DateTime.Today.ToString("dd/MM/yyyy");
+            lblShow_Fecha.Text = DateTime.Today.ToString("dd/MM/yyyy");
+            
             user = pUsuario;
             CajaBDEntities caja = new CajaBDEntities();
-         
-
+            Login lo = new Login();
+            
 
             var empleado = caja.EMPLEADO.FirstOrDefault(em => em.Usuario == user);
             lblShow_Empleado.Text = empleado.Nombre_Empleado;
 
-
         }
-
+        
         public void calcularTotales()
         {
-            
+
             float TotalFacturado = 0.00f, TotalImporte = 0.00f, TotalSeguro = 0.00f, TotalPagar;
             foreach (ListViewItem item in lvwFactura.Items)
             {
-               
+
                 string Facturado = item.SubItems[2].Text;
                 string Importe = item.SubItems[4].Text;
                 string Seguro = item.SubItems[3].Text;
@@ -78,55 +58,40 @@ namespace hospital.Caja
             lblShow_Balance_a_pagar.Text = TotalPagar.ToString();
 
         }
-
-        private void label7_Click(object sender, EventArgs e)
+        private void btnGuardar_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label13_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label22_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
             CajaBDEntities cajaBDofflineEntities = new CajaBDEntities();
             string connectionString = ConfigurationManager.ConnectionStrings["cs"].ConnectionString;
             SqlConnection sqlConnection = new SqlConnection(connectionString);
-            SqlCommand cmFactura = null;
-            SqlCommand cmReporte = new SqlCommand("ppInsertarReporte",sqlConnection);
             SqlTransaction transaction = sqlConnection.BeginTransaction();
-            cmReporte.CommandType = CommandType.StoredProcedure;
-            cmReporte.Transaction = transaction;
+            SqlCommand cmFactura = null;
+            SqlCommand cmReporte = new SqlCommand("ppInsertarReporte", sqlConnection,transaction);
             
+            
+            
+            cmReporte.CommandType = CommandType.StoredProcedure;
+           
+            string selectedText = cbSeguro.Text;
+            var seguro = cajaBDofflineEntities.SEGURO.FirstOrDefault(s => s.Nombre_Seguro == selectedText);
+            int id_seguro = seguro.Id_Seguro;
 
+            
+            
            
 
             int id_cliente, id_servicio, id_empleado, cod_factura;
-            decimal monto, desseguro, TotalSeguro, TotalImporte, TotalFacturado, pagado,TotalPagar;
+            decimal monto, desseguro, TotalSeguro, TotalImporte, TotalFacturado, pagado, TotalPagar;
 
-            var cliente = cajaBDofflineEntities.CLIENTE.FirstOrDefault(c => c.Nombre_Cliente == lblShow_Cliente.Text);
+            var cliente = cajaBDofflineEntities.CLIENTE.FirstOrDefault(c => c.Cedula_Cliente == txtCedula.Text);
             var empleado = cajaBDofflineEntities.EMPLEADO.FirstOrDefault(em => em.Nombre_Empleado == lblShow_Empleado.Text);
             id_cliente = cliente.Id_Cliente;
             id_empleado = empleado.Id_Empleado;
 
             var ultimaFactura = cajaBDofflineEntities.FACTURA.OrderByDescending(uf => uf.Id_Factura).FirstOrDefault();
 
-            if(ultimaFactura != null)
+            if (ultimaFactura != null)
             {
-                 cod_factura = ultimaFactura.Id_Factura;
+                cod_factura = ultimaFactura.Id_Factura;
             }
             else
             {
@@ -139,8 +104,8 @@ namespace hospital.Caja
 
             foreach (ListViewItem item in lvwFactura.Items)
             {
-                
-               int Codigo_Servicio = int.Parse(item.SubItems[0].Text); // Suponiendo que "ID" es la primera columna (índice 0)
+
+                int Codigo_Servicio = int.Parse(item.SubItems[0].Text); // Suponiendo que "ID" es la primera columna (índice 0)
                 decimal Precio = decimal.Parse(item.SubItems[2].Text);
                 decimal Seguro = decimal.Parse(item.SubItems[3].Text);
                 decimal Importe = decimal.Parse(item.SubItems[4].Text);
@@ -151,12 +116,17 @@ namespace hospital.Caja
                 pagado = monto - desseguro + Importe;
 
 
+
+
+
+                sqlConnection.Open();
+
+
                 cmFactura = new SqlCommand();
                 cmFactura.Connection = sqlConnection;
-                cmFactura.CommandText = "ppInsertarFactura";
                 cmFactura.CommandType = System.Data.CommandType.StoredProcedure;
+                cmFactura.CommandText = "ppInsertarFactura";
                 cmFactura.Transaction = transaction;
-                sqlConnection.Open();
 
                 try
                 {
@@ -170,26 +140,18 @@ namespace hospital.Caja
                     cmFactura.Parameters.AddWithValue("@Importe", Importe);
                     cmFactura.Parameters.AddWithValue("@Estado", 0);
                     cmFactura.Parameters.AddWithValue("@Cod_Factura", cod_factura);
-
-
-                    
                     cmFactura.ExecuteNonQuery();
                     transaction.Commit();
-                    MessageBox.Show("Factura Registrada. Presione Imprimir");
-
                 }
-                catch(Exception er)
+                catch (Exception er)
                 {
-                    MessageBox.Show("Ocurrio un error: " + er.Message);
+                    MessageBox.Show(er.Message);
                     transaction.Rollback();
                 }
-
-                
-                
-
                 
 
 
+               
                 
 
                 sqlConnection.Close();
@@ -199,7 +161,7 @@ namespace hospital.Caja
 
 
             }
-            sqlConnection.Open ();
+            sqlConnection.Open();
 
             try
             {
@@ -215,9 +177,9 @@ namespace hospital.Caja
 
                 cmReporte.ExecuteNonQuery();
                 transaction.Commit();
-            }
-            catch(Exception er)
+            }catch (Exception er)
             {
+                MessageBox.Show(er.Message);
                 transaction.Rollback();
             }
             
@@ -225,14 +187,18 @@ namespace hospital.Caja
             sqlConnection.Close();
 
 
+        }
 
-
+        private void FacturacionOffline_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'dataset.SEGURO' table. You can move, or remove it, as needed.
+            this.sEGUROTableAdapter.Fill(this.dataset.SEGURO);
+            
 
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-           
             int Codigo;
 
             if (string.IsNullOrWhiteSpace(txtCodigo.Text))
@@ -244,34 +210,32 @@ namespace hospital.Caja
             {
                 Codigo = int.Parse(txtCodigo.Text);
                 CajaBDEntities cajaBDofflineEntities = new CajaBDEntities();
-                
-                    var servicio = cajaBDofflineEntities.SERVICIOS.FirstOrDefault(s => s.Id_Servicio == Codigo);
-                    txtDescripcion.Text = servicio.Nombre_Servicio;
-                    txtPrecio.Text = servicio.Precio.ToString();
 
-                
+                var servicio = cajaBDofflineEntities.SERVICIOS.FirstOrDefault(s => s.Id_Servicio == Codigo);
+                txtDescripcion.Text = servicio.Nombre_Servicio;
+                txtPrecio.Text = servicio.Precio.ToString();
+
+
             }
-           
-            
-            
+
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             CajaBDEntities cajaBDofflineEntities = new CajaBDEntities();
-            if (string.IsNullOrWhiteSpace(txtCodigo.Text) )
+            if (string.IsNullOrWhiteSpace(txtCodigo.Text))
             {
                 MessageBox.Show("Por favor, ingrese codigo de servicio.", "Campo vacío", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
-            else if( string.IsNullOrWhiteSpace(txtPrecio.Text))
+            else if (string.IsNullOrWhiteSpace(txtPrecio.Text))
             {
                 MessageBox.Show("No ha elegido un servicio.", "Servicio no elegido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
             else
             {
-                var seguro = cajaBDofflineEntities.SEGURO.FirstOrDefault(s => s.Nombre_Seguro == lbl_ShowSeguro.Text);
+                var seguro = cajaBDofflineEntities.SEGURO.FirstOrDefault(s => s.Nombre_Seguro == cbSeguro.Text);
                 float desSeguro = (float)seguro.Des_Porcentaje * float.Parse(txtPrecio.Text);
                 float importe = 0.05f * (float.Parse(txtPrecio.Text) - desSeguro);
 
@@ -279,25 +243,7 @@ namespace hospital.Caja
                 lvwFactura.Items.Add(new ListViewItem(fila));
                 calcularTotales();
             }
-
             
-
-            try
-            {
-                // Agregar la factura a la base de datos o realizar cualquier operación necesaria
-                lvwFactura.Items.Add(new ListViewItem(fila));
-
-                // Calcular los totales
-                calcularTotales();
-
-                // Registro de éxito
-                log.Info("Factura agregada correctamente.");
-            }
-            catch (Exception ex)
-            {
-                // Registro de error
-                log.Error("Error al agregar la factura: " + ex.Message);
-            }
 
         }
 
@@ -315,7 +261,7 @@ namespace hospital.Caja
                 {
                     // Obtén el valor del campo "ID"
                     string Codigo = item.SubItems[0].Text; // Suponiendo que "ID" es la primera columna (índice 0)
-                    
+
                     if (Codigo == txtEliminar.Text)
                     {
                         // Elimina la fila
@@ -326,63 +272,54 @@ namespace hospital.Caja
                     // Verifica si el valor de "ID" coincide con el valor deseado
                     bandera = false;
                 }
-                if(bandera == false)
+                if (bandera == false)
                 {
                     MessageBox.Show("Ese codigo no se encuentra en el tablero.", "Codigo no encontrado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 }
                 calcularTotales();
             }
+
         }
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
-
-
+            
             FacturaImpresion fi = new FacturaImpresion();
             fi.ShowDialog();
-            
-            
-           
-           /* FacturaAdapter = facturaAdapter.GetData(cod_ultima_factura);
-
-            report.Name = "Dataset";
-            report.Value = FacturaAdapter;*/ 
-
-          //  reportv
-        }
-
-        private void lblEliminar_Click(object sender, EventArgs e)
-        {
 
         }
 
-        private void lblShow_Empleado_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblFacturado_Por_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lvwFactura_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblFacturacion_Click(object sender, EventArgs e)
+        private void txtCodigo_TextChanged(object sender, EventArgs e)
         {
 
         }
 
         private void txtCodigo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b') // Verifica si no es un dígito ni la tecla de retroceso (backspace)
+            {
+                e.Handled = true; // Cancela el evento para evitar que el carácter se muestre en el TextBox
+            }
+        }
+
+        private void txtPoliza_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b') // Verifica si no es un dígito ni la tecla de retroceso (backspace)
+            {
+                e.Handled = true; // Cancela el evento para evitar que el carácter se muestre en el TextBox
+            }
+        }
+
+        private void txtCedula_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b') // Verifica si no es un dígito ni la tecla de retroceso (backspace)
+            {
+                e.Handled = true; // Cancela el evento para evitar que el carácter se muestre en el TextBox
+            }
+        }
+
+        private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b') // Verifica si no es un dígito ni la tecla de retroceso (backspace)
             {
@@ -398,29 +335,89 @@ namespace hospital.Caja
             }
         }
 
-        private void txtCodigo_TextChanged(object sender, EventArgs e)
+        private void txtPoliza_TextChanged(object sender, EventArgs e)
         {
+            int maxDigits = 14; // Número máximo de dígitos permitidos
 
+            if (txtPoliza.Text.Length > maxDigits)
+            {
+                txtPoliza.Text = txtPoliza.Text.Substring(0, maxDigits); // Limita la longitud del texto al número máximo de dígitos permitidos
+                txtPoliza.SelectionStart = maxDigits; // Establece el cursor al final del texto
+            }
         }
 
-        private void FacturacionOnline_Load(object sender, EventArgs e)
+        private void txtTelefono_TextChanged(object sender, EventArgs e)
         {
-            CajaBDEntities caja = new CajaBDEntities();
+            int maxDigits = 11; // Número máximo de dígitos permitidos
 
-            var cliente = caja.CLIENTE.FirstOrDefault(c => c.Id_Cliente == idcliente);
-            var seguro = caja.SEGURO.FirstOrDefault(c => c.Id_Seguro == cliente.Id_Seguro);
+            if (txtTelefono.Text.Length > maxDigits)
+            {
+                txtTelefono.Text = txtTelefono.Text.Substring(0, maxDigits); // Limita la longitud del texto al número máximo de dígitos permitidos
+                txtTelefono.SelectionStart = maxDigits; // Establece el cursor al final del texto
+            }
+        }
 
-            string poliza, Nombre, Telefono, Seguro;
-            poliza = cliente.Poliza;
-            Telefono = cliente.Telefono;
-            Nombre = cliente.Nombre_Cliente;
-            Seguro = seguro.Nombre_Seguro;
+        private void txtCedula_TextChanged(object sender, EventArgs e)
+        {
+            int maxDigits = 11; // Número máximo de dígitos permitidos
 
-            lblShow_Cliente.Text = Nombre;
-            lbl_ShowSeguro.Text = Seguro;
-            lblShow_Tel.Text = Telefono;
-            lblShow_Poliza.Text = poliza;
+            if (txtCedula.Text.Length > maxDigits)
+            {
+                txtCedula.Text = txtCedula.Text.Substring(0, maxDigits); // Limita la longitud del texto al número máximo de dígitos permitidos
+                txtCedula.SelectionStart = maxDigits; // Establece el cursor al final del texto
+            }
+        }
 
+        private void btnAgregarCliente_Click(object sender, EventArgs e)
+        {
+            CajaBDEntities cajaBDofflineEntities = new CajaBDEntities();
+            string connectionString = ConfigurationManager.ConnectionStrings["cs"].ConnectionString;
+            SqlConnection sqlConnection = new SqlConnection(connectionString);
+
+            
+            sqlConnection.Open();
+            SqlTransaction transaction = sqlConnection.BeginTransaction();
+            SqlCommand cmCliente = new SqlCommand("ppInsertarCliente", sqlConnection);
+            cmCliente.CommandType = CommandType.StoredProcedure;
+            cmCliente.Transaction = transaction;
+            string selectedText = cbSeguro.Text;
+            var seguro = cajaBDofflineEntities.SEGURO.FirstOrDefault(s => s.Nombre_Seguro == selectedText);
+            int id_seguro = seguro.Id_Seguro;
+
+            if (string.IsNullOrWhiteSpace(txtNombreCliente.Text)|| string.IsNullOrWhiteSpace(txtCedula.Text)|| string.IsNullOrWhiteSpace(txtPoliza.Text)|| string.IsNullOrWhiteSpace(txtTelefono.Text))
+            {
+                MessageBox.Show("Por favor, ingrese los datos del cliente.", "Campo vacío", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
+            else
+            {
+                try
+                {
+                    cmCliente.Parameters.AddWithValue("@Nombre_Cliente", txtNombreCliente.Text);
+                    cmCliente.Parameters.AddWithValue("@Id_Seguro", id_seguro);
+                    cmCliente.Parameters.AddWithValue("@Cedula_Cliente", txtCedula.Text);
+                    cmCliente.Parameters.AddWithValue("@Poliza", txtPoliza.Text);
+                    cmCliente.Parameters.AddWithValue("@Telefono", txtTelefono.Text);
+
+                    cmCliente.ExecuteNonQuery();
+                    transaction.Commit();
+                    MessageBox.Show("Cliente Agregado");
+                    txtCedula.Enabled = !txtCedula.Enabled;
+                    txtPoliza.Enabled = !txtPoliza.Enabled;
+                    txtNombreCliente.Enabled = !txtNombreCliente.Enabled;
+                    txtTelefono.Enabled = !txtTelefono.Enabled;
+                    cbSeguro.Enabled = !cbSeguro.Enabled;
+                    txtCodigo.Enabled = !txtCodigo.Enabled;
+                }
+                catch (Exception er)
+                {
+                    transaction.Rollback();
+                    MessageBox.Show(er.Message);
+                }
+
+                sqlConnection.Close();
+            }
+            
         }
     }
 }

@@ -31,11 +31,11 @@ namespace hospital.Caja
         public virtual DbSet<EMPLEADO> EMPLEADO { get; set; }
         public virtual DbSet<SEGURO> SEGURO { get; set; }
         public virtual DbSet<SERVICIOS> SERVICIOS { get; set; }
-        public virtual DbSet<FACTURA> FACTURA { get; set; }
         public virtual DbSet<REPORTE> REPORTE { get; set; }
         public virtual DbSet<MontoInicial> MontoInicial { get; set; }
+        public virtual DbSet<FACTURA> FACTURA { get; set; }
     
-        public virtual int ppInsertarFactura(Nullable<int> idCliente, Nullable<int> idServicio, Nullable<decimal> monto, Nullable<decimal> desSeguro, Nullable<decimal> pagado, Nullable<System.DateTime> fecha, Nullable<int> idEmpleado, Nullable<decimal> importe, Nullable<int> cod_Factura)
+        public virtual int ppInsertarFactura(Nullable<int> idCliente, Nullable<int> idServicio, Nullable<decimal> monto, Nullable<decimal> desSeguro, Nullable<decimal> pagado, Nullable<System.DateTime> fecha, Nullable<int> idEmpleado, Nullable<decimal> importe, Nullable<int> estado, Nullable<int> cod_Factura)
         {
             var idClienteParameter = idCliente.HasValue ?
                 new ObjectParameter("IdCliente", idCliente) :
@@ -69,11 +69,15 @@ namespace hospital.Caja
                 new ObjectParameter("Importe", importe) :
                 new ObjectParameter("Importe", typeof(decimal));
     
+            var estadoParameter = estado.HasValue ?
+                new ObjectParameter("Estado", estado) :
+                new ObjectParameter("Estado", typeof(int));
+    
             var cod_FacturaParameter = cod_Factura.HasValue ?
                 new ObjectParameter("Cod_Factura", cod_Factura) :
                 new ObjectParameter("Cod_Factura", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ppInsertarFactura", idClienteParameter, idServicioParameter, montoParameter, desSeguroParameter, pagadoParameter, fechaParameter, idEmpleadoParameter, importeParameter, cod_FacturaParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ppInsertarFactura", idClienteParameter, idServicioParameter, montoParameter, desSeguroParameter, pagadoParameter, fechaParameter, idEmpleadoParameter, importeParameter, estadoParameter, cod_FacturaParameter);
         }
     
         public virtual ObjectResult<string> ppLogin(string username, string password)

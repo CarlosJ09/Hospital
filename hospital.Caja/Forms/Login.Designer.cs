@@ -55,6 +55,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.groupBox1.Controls.Add(this.btnLogin);
             this.groupBox1.Controls.Add(this.txtPassword);
             this.groupBox1.Controls.Add(this.txtUser);
@@ -67,15 +68,20 @@
             this.groupBox1.Size = new System.Drawing.Size(500, 411);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // btnLogin
             // 
+<<<<<<< HEAD
             this.btnLogin.Location = new System.Drawing.Point(88, 303);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(300, 90);
+=======
+            this.btnLogin.Location = new System.Drawing.Point(66, 246);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(225, 73);
+>>>>>>> 5d354ff92e331237db608f63ef4768bf4b3c42c0
             this.btnLogin.TabIndex = 9;
             this.btnLogin.Text = "Iniciar Sesion";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -88,7 +94,12 @@
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPassword.Multiline = true;
             this.txtPassword.Name = "txtPassword";
+<<<<<<< HEAD
             this.txtPassword.Size = new System.Drawing.Size(421, 41);
+=======
+            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.Size = new System.Drawing.Size(317, 34);
+>>>>>>> 5d354ff92e331237db608f63ef4768bf4b3c42c0
             this.txtPassword.TabIndex = 8;
             // 
             // txtUser
@@ -128,7 +139,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(627, 767);
+=======
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ClientSize = new System.Drawing.Size(470, 623);
+>>>>>>> 5d354ff92e331237db608f63ef4768bf4b3c42c0
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBox1);
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);

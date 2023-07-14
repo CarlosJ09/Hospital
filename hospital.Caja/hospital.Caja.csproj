@@ -59,9 +59,12 @@
     <Reference Include="log4net, Version=2.0.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>..\packages\log4net.2.0.15\lib\net45\log4net.dll</HintPath>
     </Reference>
+<<<<<<< HEAD
     <Reference Include="log4net.Ext.Json, Version=2.0.10.1, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\log4net.Ext.Json.2.0.10.1\lib\net452\log4net.Ext.Json.dll</HintPath>
     </Reference>
+=======
+>>>>>>> 5d354ff92e331237db608f63ef4768bf4b3c42c0
     <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
     </Reference>
@@ -90,7 +93,10 @@
     <Reference Include="System.Security" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web" />
+<<<<<<< HEAD
     <Reference Include="System.Web.Extensions" />
+=======
+>>>>>>> 5d354ff92e331237db608f63ef4768bf4b3c42c0
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -144,6 +150,12 @@
     </Compile>
     <Compile Include="Forms\Cuadre.Designer.cs">
       <DependentUpon>Cuadre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FacturacionOffline.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FacturacionOffline.Designer.cs">
+      <DependentUpon>FacturacionOffline.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FacturacionOnline.cs">
       <SubType>Form</SubType>
@@ -207,6 +219,9 @@
     <EmbeddedResource Include="Forms\Cuadre.resx">
       <DependentUpon>Cuadre.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FacturacionOffline.resx">
+      <DependentUpon>FacturacionOffline.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FacturacionOnline.resx">
       <DependentUpon>FacturacionOnline.cs</DependentUpon>
     </EmbeddedResource>
@@ -264,6 +279,7 @@
     <None Include="Dataset.xss">
       <DependentUpon>Dataset.xsd</DependentUpon>
     </None>
+    <None Include="log4net.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -332,11 +348,21 @@
       <DependentUpon>CajaModel.edmx</DependentUpon>
       <LastGenOutput>CajaModel.cs</LastGenOutput>
     </Content>
+    <Content Include="Recursos\Check.jpg" />
+    <Content Include="Recursos\eliminar.png" />
     <Content Include="Recursos\HOSPITAL INTECIANO.2 LOGO.png" />
     <Content Include="Recursos\HOSPITEC LOGO, NOMBRE, SLOGAN.png" />
+<<<<<<< HEAD
     <None Include="Log4net.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+=======
+    <Content Include="Recursos\imprimir.png" />
+    <Content Include="Recursos\lupa.png" />
+    <Content Include="Recursos\masverde.png" />
+    <Content Include="Recursos\reloj.png" />
+    <Content Include="Recursos\x.png" />
+>>>>>>> 5d354ff92e331237db608f63ef4768bf4b3c42c0
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
