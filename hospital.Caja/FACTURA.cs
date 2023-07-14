@@ -12,7 +12,7 @@ namespace hospital.Caja
     using System;
     using System.Collections.Generic;
     
-    public partial class FACTURA
+    public partial class FACTURAS
     {
         public int Id_Factura { get; set; }
         public int Id_Cliente { get; set; }

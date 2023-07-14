@@ -12,7 +12,7 @@ namespace hospital.Caja
     using System;
     using System.Collections.Generic;
     
-    public partial class SERVICIOS
+    public partial class SERVICIO
     {
         public int Id_Servicio { get; set; }
         public string Nombre_Servicio { get; set; }

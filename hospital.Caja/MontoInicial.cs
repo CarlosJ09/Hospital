@@ -12,7 +12,7 @@ namespace hospital.Caja
     using System;
     using System.Collections.Generic;
     
-    public partial class MontoInicial
+    public partial class MontoInicials
     {
         public int Id { get; set; }
         public decimal Monto_Inicial { get; set; }

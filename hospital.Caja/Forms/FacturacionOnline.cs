@@ -27,10 +27,8 @@ namespace hospital.Caja
     {
         private string user;
         private int idcliente;
-<<<<<<< HEAD
-=======
+
         private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
->>>>>>> 980f3f36a289d297b9bd8a8931c6f8e50111d27c
 
         public FacturacionOnline(string pUsuario, int IdCliente)
         {

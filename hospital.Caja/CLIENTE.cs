@@ -12,7 +12,7 @@ namespace hospital.Caja
     using System;
     using System.Collections.Generic;
     
-    public partial class CLIENTE
+    public partial class CLIENTES
     {
         public int Id_Cliente { get; set; }
         public string Nombre_Cliente { get; set; }
