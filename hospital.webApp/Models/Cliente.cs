@@ -11,7 +11,7 @@ namespace hospital.webApp.Models
 {
     using System;
     using System.Collections.Generic;
-    
+
     public partial class Cliente
     {
         public int IdCliente { get; set; }

@@ -1,15 +1,28 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using hospital.integracion.Data;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System.Data;
 
 namespace hospital.integracion.Controllers
 {
     [ApiController]
+    [Route("api/[controller]")]
     public class CajaController : Controller
     {
-        [HttpGet("Clientes")]
-        public IActionResult AllClients()
+
+        private readonly CajaAPIDbContext cajaAPIDbContext;
+
+        public CajaController(CajaAPIDbContext cajaAPIDbContext)
         {
-            var response = "Clients";
-            return Ok(response);
+            this.cajaAPIDbContext = cajaAPIDbContext;
+        }
+
+
+        [HttpGet("Clientes")]
+        public async Task<IActionResult> AllClientsAsync()
+        {
+            var clientes = await cajaAPIDbContext.CLIENTE.ToListAsync();
+            return Ok(clientes);
         }
 
         [HttpGet("Usuarios")]

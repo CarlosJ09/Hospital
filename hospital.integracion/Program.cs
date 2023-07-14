@@ -1,3 +1,6 @@
+using hospital.integracion.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +9,13 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddDbContext<CoreAPIDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("CoreContext")));
+
+builder.Services.AddDbContext<CajaAPIDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("CajaContext")));
+
+builder.Services.AddDbContext<WebAPIDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("WebContext")));
+
 
 var app = builder.Build();
 
