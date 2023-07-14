@@ -24,24 +24,34 @@ namespace hospital.Caja.Forms
         {
             string connectionString = ConfigurationManager.ConnectionStrings["cs"].ConnectionString;
             SqlConnection sqlConnection = new SqlConnection(connectionString);
-       
-            SqlCommand cmMontoInicial = new SqlCommand("ppInsertarMontoInicial", sqlConnection);
+            sqlConnection.Open();
+            SqlTransaction transaction = sqlConnection.BeginTransaction();
+            SqlCommand cmMontoInicial = new SqlCommand("ppInsertarMontoInicial", sqlConnection,transaction);
             cmMontoInicial.CommandType = CommandType.StoredProcedure;
 
-            SqlTransaction transaction = sqlConnection.BeginTransaction();
-            if (string.IsNullOrWhiteSpace(txtMontoInicial.Text))
+            try
             {
-                MessageBox.Show("Por favor, ingrese un valor en el campo.", "Campo vacío", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                if (string.IsNullOrWhiteSpace(txtMontoInicial.Text))
+                {
+                    MessageBox.Show("Por favor, ingrese un valor en el campo.", "Campo vacío", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
+                }
+                else
+                {
+                    cmMontoInicial.Parameters.AddWithValue("@Monto", decimal.Parse(txtMontoInicial.Text));
+                    cmMontoInicial.Parameters.AddWithValue("@Fecha", DateTime.Today);
+
+                    MessageBox.Show("Monto inicial agregado", "Campo vacío", MessageBoxButtons.OK);
+
+                    cmMontoInicial.ExecuteNonQuery();
+                }
+                transaction.Commit();
             }
-            else
+            catch (Exception er)
             {
-                cmMontoInicial.Parameters.AddWithValue("@Monto", decimal.Parse(txtMontoInicial.Text));
-                cmMontoInicial.Parameters.AddWithValue("@Fecha", DateTime.Today);
-                MessageBox.Show("Monto inicial agregado", "Campo vacío", MessageBoxButtons.OK);
-
-
+                transaction.Rollback();
             }
+            
         }
 
         private void txtMontoInicial_KeyPress(object sender, KeyPressEventArgs e)

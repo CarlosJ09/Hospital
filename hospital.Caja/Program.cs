@@ -19,6 +19,7 @@ namespace hospital.Caja
             Application.SetCompatibleTextRenderingDefault(false);
             Login login = new Login();
             login.ShowDialog();
+            
         }
     }
 }

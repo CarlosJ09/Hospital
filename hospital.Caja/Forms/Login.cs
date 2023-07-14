@@ -24,7 +24,7 @@ namespace hospital.Caja.Forms
         {
             InitializeComponent();
         }
-        private string UsuarioP;
+       
         public string Usuario { get { return txtUser.Text; } }
 
         private void groupBox1_Enter(object sender, EventArgs e)

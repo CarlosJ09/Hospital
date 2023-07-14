@@ -87,6 +87,7 @@
             this.lblMontoInicial.Size = new System.Drawing.Size(90, 20);
             this.lblMontoInicial.TabIndex = 6;
             this.lblMontoInicial.Text = "$$$$$$$$$";
+            this.lblMontoInicial.Click += new System.EventHandler(this.lblMontoInicial_Click);
             // 
             // lblGanancias
             // 

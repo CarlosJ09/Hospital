@@ -69,7 +69,7 @@
             this.btnGuardarMonto.Name = "btnGuardarMonto";
             this.btnGuardarMonto.Size = new System.Drawing.Size(166, 57);
             this.btnGuardarMonto.TabIndex = 3;
-            this.btnGuardarMonto.Text = "button1";
+            this.btnGuardarMonto.Text = "Guardar";
             this.btnGuardarMonto.UseVisualStyleBackColor = true;
             this.btnGuardarMonto.Click += new System.EventHandler(this.btnGuardarMonto_Click);
             // 

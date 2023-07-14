@@ -12,6 +12,7 @@
         <EntityTypeShape EntityType="CajaBDModel.REPORTE" Width="1.5" PointX="3.375" PointY="6.75" />
         <EntityTypeShape EntityType="CajaBDModel.MontoInicial" Width="1.5" PointX="5.375" PointY="6.75" />
         <EntityTypeShape EntityType="CajaBDModel.FACTURA" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="CajaBDModel.PROCESOS" Width="1.5" PointX="7.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

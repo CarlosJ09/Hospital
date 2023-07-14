@@ -36,5 +36,10 @@ namespace hospital.Caja.Forms
             lblGanancias.Text = ganancias.ToString();
             lblMontoFinal.Text = suma.ToString();
         }
+
+        private void lblMontoInicial_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

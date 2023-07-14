@@ -27,6 +27,10 @@ namespace hospital.Caja
     {
         private string user;
         private int idcliente;
+<<<<<<< HEAD
+=======
+        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+>>>>>>> 980f3f36a289d297b9bd8a8931c6f8e50111d27c
 
         public FacturacionOnline(string pUsuario, int IdCliente)
         {
@@ -34,7 +38,7 @@ namespace hospital.Caja
             lblShow_Fecha.Text =  DateTime.Today.ToString("dd/MM/yyyy");
             user = pUsuario;
             CajaBDEntities caja = new CajaBDEntities();
-         
+            idcliente = IdCliente;
 
 
             var empleado = caja.EMPLEADO.FirstOrDefault(em => em.Usuario == user);
@@ -99,6 +103,7 @@ namespace hospital.Caja
             SqlConnection sqlConnection = new SqlConnection(connectionString);
             SqlCommand cmFactura = null;
             SqlCommand cmReporte = new SqlCommand("ppInsertarReporte",sqlConnection);
+            sqlConnection.Open(); 
             SqlTransaction transaction = sqlConnection.BeginTransaction();
             cmReporte.CommandType = CommandType.StoredProcedure;
             cmReporte.Transaction = transaction;
@@ -128,93 +133,89 @@ namespace hospital.Caja
             TotalSeguro = decimal.Parse(lblShow_Total_Seguro.Text);
             TotalPagar = decimal.Parse(lblShow_Balance_a_pagar.Text);
             TotalImporte = decimal.Parse(lblShow_Total_Importe.Text);
-
-            foreach (ListViewItem item in lvwFactura.Items)
+            try
             {
-                
-               int Codigo_Servicio = int.Parse(item.SubItems[0].Text); // Suponiendo que "ID" es la primera columna (índice 0)
-                decimal Precio = decimal.Parse(item.SubItems[2].Text);
-                decimal Seguro = decimal.Parse(item.SubItems[3].Text);
-                decimal Importe = decimal.Parse(item.SubItems[4].Text);
+                foreach (ListViewItem item in lvwFactura.Items)
+                {
 
-                id_servicio = Codigo_Servicio;
-                monto = Precio;
-                desseguro = Seguro;
-                pagado = monto - desseguro + Importe;
+                    int Codigo_Servicio = int.Parse(item.SubItems[0].Text); // Suponiendo que "ID" es la primera columna (índice 0)
+                    decimal Precio = decimal.Parse(item.SubItems[2].Text);
+                    decimal Seguro = decimal.Parse(item.SubItems[3].Text);
+                    decimal Importe = decimal.Parse(item.SubItems[4].Text);
+
+                    id_servicio = Codigo_Servicio;
+                    monto = Precio;
+                    desseguro = Seguro;
+                    pagado = monto - desseguro + Importe;
 
 
-                cmFactura = new SqlCommand();
-                cmFactura.Connection = sqlConnection;
-                cmFactura.CommandText = "ppInsertarFactura";
-                cmFactura.CommandType = System.Data.CommandType.StoredProcedure;
-                cmFactura.Transaction = transaction;
-                sqlConnection.Open();
+                    cmFactura = new SqlCommand();
+                    cmFactura.Connection = sqlConnection;
+                    cmFactura.CommandText = "ppInsertarFactura";
+                    cmFactura.CommandType = System.Data.CommandType.StoredProcedure;
+                    cmFactura.Transaction = transaction;
+
+
+                    try
+                    {
+                        cmFactura.Parameters.AddWithValue("@IdCliente", id_cliente);
+                        cmFactura.Parameters.AddWithValue("@IdServicio", id_servicio);
+                        cmFactura.Parameters.AddWithValue("@Monto", monto);
+                        cmFactura.Parameters.AddWithValue("@DesSeguro", desseguro);
+                        cmFactura.Parameters.AddWithValue("@Pagado", pagado);
+                        cmFactura.Parameters.AddWithValue("@Fecha", DateTime.Today);
+                        cmFactura.Parameters.AddWithValue("@IdEmpleado", id_empleado);
+                        cmFactura.Parameters.AddWithValue("@Importe", Importe);
+                        cmFactura.Parameters.AddWithValue("@Estado", 0);
+                        cmFactura.Parameters.AddWithValue("@Cod_Factura", cod_factura);
+
+
+
+                        cmFactura.ExecuteNonQuery();
+                       
+                        MessageBox.Show("Factura Registrada. Presione Imprimir");
+                        log.Info("Factura Registrada");
+
+                    }
+                    catch (Exception er)
+                    {
+                        MessageBox.Show("Ocurrio un error: " + er.Message);
+                        log.Error("Ocurrio un error: " + er.Message);
+                    }
+
+
+
+                }
+
 
                 try
                 {
-                    cmFactura.Parameters.AddWithValue("@IdCliente", id_cliente);
-                    cmFactura.Parameters.AddWithValue("@IdServicio", id_servicio);
-                    cmFactura.Parameters.AddWithValue("@Monto", monto);
-                    cmFactura.Parameters.AddWithValue("@DesSeguro", desseguro);
-                    cmFactura.Parameters.AddWithValue("@Pagado", pagado);
-                    cmFactura.Parameters.AddWithValue("@Fecha", DateTime.Today);
-                    cmFactura.Parameters.AddWithValue("@IdEmpleado", id_empleado);
-                    cmFactura.Parameters.AddWithValue("@Importe", Importe);
-                    cmFactura.Parameters.AddWithValue("@Estado", 0);
-                    cmFactura.Parameters.AddWithValue("@Cod_Factura", cod_factura);
+                    cmReporte.Parameters.AddWithValue("@Id_Cliente", id_cliente);
+                    cmReporte.Parameters.AddWithValue("@Cod_Factura", cod_factura);
+                    cmReporte.Parameters.AddWithValue("@Id_Empleado", id_empleado);
+                    cmReporte.Parameters.AddWithValue("@Total_Facturado", TotalFacturado);
+                    cmReporte.Parameters.AddWithValue("@Total_Seguro", TotalSeguro);
+                    cmReporte.Parameters.AddWithValue("@Tota_Importe", TotalImporte);
+                    cmReporte.Parameters.AddWithValue("@Fecha", DateTime.Today);
 
+                    cmReporte.Parameters.AddWithValue("@Total_Balance", TotalPagar);
 
+                    cmReporte.ExecuteNonQuery();
                     
-                    cmFactura.ExecuteNonQuery();
-                    transaction.Commit();
-                    MessageBox.Show("Factura Registrada. Presione Imprimir");
-
                 }
-                catch(Exception er)
+                catch (Exception er)
                 {
-                    MessageBox.Show("Ocurrio un error: " + er.Message);
-                    transaction.Rollback();
+                    log.Error("Ocurrio un error: " + er.Message);
                 }
 
-                
-                
-
-                
-
-
-                
-
-                sqlConnection.Close();
-
-
-
-
-
-            }
-            sqlConnection.Open ();
-
-            try
-            {
-                cmReporte.Parameters.AddWithValue("@Id_Cliente", id_cliente);
-                cmReporte.Parameters.AddWithValue("@Cod_Factura", cod_factura);
-                cmReporte.Parameters.AddWithValue("@Id_Empleado", id_empleado);
-                cmReporte.Parameters.AddWithValue("@Total_Facturado", TotalFacturado);
-                cmReporte.Parameters.AddWithValue("@Total_Seguro", TotalSeguro);
-                cmReporte.Parameters.AddWithValue("@Tota_Importe", TotalImporte);
-                cmReporte.Parameters.AddWithValue("@Fecha", DateTime.Today);
-
-                cmReporte.Parameters.AddWithValue("@Total_Balance", TotalPagar);
-
-                cmReporte.ExecuteNonQuery();
                 transaction.Commit();
             }
-            catch(Exception er)
+            catch (Exception er)
             {
                 transaction.Rollback();
             }
             
-
-            sqlConnection.Close();
+            
 
 
 
@@ -381,8 +382,8 @@ namespace hospital.Caja
         private void FacturacionOnline_Load(object sender, EventArgs e)
         {
             CajaBDEntities caja = new CajaBDEntities();
-
-            var cliente = caja.CLIENTE.FirstOrDefault(c => c.Id_Cliente == idcliente);
+            int idc = idcliente;
+            var cliente = caja.CLIENTE.FirstOrDefault(c => c.Id_Cliente == idc);
             var seguro = caja.SEGURO.FirstOrDefault(c => c.Id_Seguro == cliente.Id_Seguro);
 
             string poliza, Nombre, Telefono, Seguro;
